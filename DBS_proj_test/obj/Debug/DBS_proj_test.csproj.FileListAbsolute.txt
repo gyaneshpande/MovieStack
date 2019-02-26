@@ -1,0 +1,12 @@
+D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\bin\Debug\DBS_proj_test.exe.config
+D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\bin\Debug\DBS_proj_test.exe
+D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\bin\Debug\DBS_proj_test.pdb
+D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\obj\Debug\DBS_proj_test.csprojAssemblyReference.cache
+D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\obj\Debug\DBS_proj_test.Form1.resources
+D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\obj\Debug\DBS_proj_test.Properties.Resources.resources
+D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\obj\Debug\DBS_proj_test.csproj.GenerateResource.cache
+D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\obj\Debug\DBS_proj_test.csproj.CoreCompileInputs.cache
+D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\obj\Debug\DBS_proj_test.exe
+D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\obj\Debug\DBS_proj_test.pdb
+D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\obj\Debug\DBS_proj_test.top_movies.resources
+D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\obj\Debug\DBS_proj_test.Form2.resources
