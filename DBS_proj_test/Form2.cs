@@ -77,5 +77,11 @@ namespace DBS_proj_test
         {
             this.searchbar.Text = null;
         }
+
+        private void signin_b_Click(object sender, EventArgs e)
+        {
+            login_form lf1 = new login_form();
+            lf1.Show();
+        }
     }
 }

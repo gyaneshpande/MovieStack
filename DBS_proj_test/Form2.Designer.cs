@@ -46,6 +46,8 @@
             // 
             // panel1
             // 
+            this.panel1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.panel1.Controls.Add(this.twitter_b);
@@ -178,6 +180,7 @@
             this.signin_b.TabIndex = 3;
             this.signin_b.Text = "Sign in";
             this.signin_b.UseVisualStyleBackColor = false;
+            this.signin_b.Click += new System.EventHandler(this.signin_b_Click);
             // 
             // search_b
             // 
