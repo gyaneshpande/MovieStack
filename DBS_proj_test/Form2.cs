@@ -11,13 +11,17 @@ using System.Windows.Forms;
 namespace DBS_proj_test
 {
     public partial class Form2 : Form
-    {
-      
+    {      
         public Form2()
         {
             InitializeComponent();
             this.tab_p.Hide();
+            timer1.Interval = 05;
+            timer1.Start();
+            button5.Location = new Point(button5.Location.X + button5.Width + 30,button5.Location.Y);
         }
+
+
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -82,6 +86,80 @@ namespace DBS_proj_test
         {
             login_form lf1 = new login_form();
             lf1.Show();
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            button1.Location = new Point(button1.Location.X - 1, button1.Location.Y);
+            button2.Location = new Point(button2.Location.X - 1, button2.Location.Y);
+            button3.Location = new Point(button3.Location.X - 1, button3.Location.Y);
+            button4.Location = new Point(button4.Location.X - 1, button4.Location.Y);
+            button5.Location = new Point(button5.Location.X - 1, button5.Location.Y);
+        }
+
+        private void button1_LocationChanged(object sender, EventArgs e)
+        {
+            if (button1.Right + button1.Width <= panel2.Left )
+            {
+                button1.Left = panel2.Width;            
+            }
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_LocationChanged(object sender, EventArgs e)
+        {
+            if (button2.Right + button2.Width <= panel2.Left)
+            {
+                button2.Left = panel2.Width;
+            }
+        }
+
+        private void button3_LocationChanged(object sender, EventArgs e)
+        {
+            if (button3.Right + button3.Width <= panel2.Left)
+            {
+                button3.Left = panel2.Width;
+            }
+        }
+
+        private void button4_LocationChanged(object sender, EventArgs e)
+        {
+            if (button4.Right + button4.Width <= panel2.Left)
+            {
+                button4.Left = panel2.Width;
+            }
+        }
+
+        private void button5_LocationChanged(object sender, EventArgs e)
+        {
+            if (button5.Right + button5.Width <= panel2.Left)
+            {
+                button5.Left = panel2.Width;
+            }
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

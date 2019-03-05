@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.panel1 = new System.Windows.Forms.Panel();
             this.twitter_b = new System.Windows.Forms.Button();
@@ -41,7 +42,15 @@
             this.search_b = new System.Windows.Forms.Button();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.searchbar = new System.Windows.Forms.RichTextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button4 = new System.Windows.Forms.Button();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.button5 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -75,7 +84,7 @@
             this.twitter_b.FlatAppearance.BorderSize = 0;
             this.twitter_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.twitter_b.ForeColor = System.Drawing.Color.Black;
-            this.twitter_b.Location = new System.Drawing.Point(1230, 18);
+            this.twitter_b.Location = new System.Drawing.Point(1230, 16);
             this.twitter_b.Margin = new System.Windows.Forms.Padding(5);
             this.twitter_b.Name = "twitter_b";
             this.twitter_b.Size = new System.Drawing.Size(39, 35);
@@ -89,7 +98,7 @@
             this.insta_b.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.insta_b.FlatAppearance.BorderSize = 0;
             this.insta_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.insta_b.Location = new System.Drawing.Point(1176, 14);
+            this.insta_b.Location = new System.Drawing.Point(1176, 12);
             this.insta_b.Margin = new System.Windows.Forms.Padding(5);
             this.insta_b.Name = "insta_b";
             this.insta_b.Size = new System.Drawing.Size(44, 42);
@@ -103,7 +112,7 @@
             this.fb_b.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.fb_b.FlatAppearance.BorderSize = 0;
             this.fb_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fb_b.Location = new System.Drawing.Point(1129, 15);
+            this.fb_b.Location = new System.Drawing.Point(1129, 13);
             this.fb_b.Margin = new System.Windows.Forms.Padding(5);
             this.fb_b.Name = "fb_b";
             this.fb_b.Size = new System.Drawing.Size(41, 39);
@@ -225,12 +234,89 @@
             this.searchbar.Click += new System.EventHandler(this.searchbar_Click);
             this.searchbar.TextChanged += new System.EventHandler(this.searchbar_TextChanged);
             // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.button5);
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Location = new System.Drawing.Point(190, 195);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(851, 206);
+            this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button1.Location = new System.Drawing.Point(65, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(153, 171);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.LocationChanged += new System.EventHandler(this.button1_LocationChanged);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button2.Location = new System.Drawing.Point(259, 15);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(153, 171);
+            this.button2.TabIndex = 1;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.LocationChanged += new System.EventHandler(this.button2_LocationChanged);
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button3.Location = new System.Drawing.Point(452, 15);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(153, 171);
+            this.button3.TabIndex = 2;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.LocationChanged += new System.EventHandler(this.button3_LocationChanged);
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button4.Location = new System.Drawing.Point(641, 15);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(153, 171);
+            this.button4.TabIndex = 3;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.LocationChanged += new System.EventHandler(this.button4_LocationChanged);
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // button5
+            // 
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
+            this.button5.Location = new System.Drawing.Point(653, 15);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(153, 171);
+            this.button5.TabIndex = 4;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.LocationChanged += new System.EventHandler(this.button5_LocationChanged);
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1333, 692);
+            this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.Margin = new System.Windows.Forms.Padding(5);
@@ -239,6 +325,7 @@
             this.Load += new System.EventHandler(this.Form2_Load);
             this.MouseHover += new System.EventHandler(this.Form2_MouseHover);
             this.panel1.ResumeLayout(false);
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
 
         }
@@ -257,5 +344,12 @@
         private System.Windows.Forms.Button twitter_b;
         private System.Windows.Forms.Button insta_b;
         private System.Windows.Forms.Button fb_b;
+        private System.Windows.Forms.Panel panel2;
+        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Timer timer1;
+        private System.Windows.Forms.Button button5;
     }
 }

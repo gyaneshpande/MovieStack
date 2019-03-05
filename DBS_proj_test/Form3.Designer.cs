@@ -30,13 +30,13 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(login_form));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.new_user_b = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
             this.login_button = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
             this.textBox2 = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
-            this.button3 = new System.Windows.Forms.Button();
-            this.new_user_b = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -54,6 +54,33 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(301, 292);
             this.panel1.TabIndex = 0;
+            // 
+            // new_user_b
+            // 
+            this.new_user_b.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.new_user_b.FlatAppearance.BorderSize = 0;
+            this.new_user_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.new_user_b.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.new_user_b.ForeColor = System.Drawing.Color.White;
+            this.new_user_b.Location = new System.Drawing.Point(90, 245);
+            this.new_user_b.Name = "new_user_b";
+            this.new_user_b.Size = new System.Drawing.Size(128, 28);
+            this.new_user_b.TabIndex = 7;
+            this.new_user_b.Text = "New User?";
+            this.new_user_b.UseVisualStyleBackColor = false;
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.FlatAppearance.BorderSize = 0;
+            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button3.Location = new System.Drawing.Point(272, 0);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(29, 29);
+            this.button3.TabIndex = 6;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
             // login_button
             // 
@@ -102,32 +129,6 @@
             this.textBox1.Size = new System.Drawing.Size(158, 20);
             this.textBox1.TabIndex = 0;
             // 
-            // button3
-            // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.FlatAppearance.BorderSize = 0;
-            this.button3.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button3.Location = new System.Drawing.Point(272, 0);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(29, 29);
-            this.button3.TabIndex = 6;
-            this.button3.UseVisualStyleBackColor = true;
-            // 
-            // new_user_b
-            // 
-            this.new_user_b.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.new_user_b.FlatAppearance.BorderSize = 0;
-            this.new_user_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.new_user_b.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.new_user_b.ForeColor = System.Drawing.Color.White;
-            this.new_user_b.Location = new System.Drawing.Point(90, 245);
-            this.new_user_b.Name = "new_user_b";
-            this.new_user_b.Size = new System.Drawing.Size(128, 28);
-            this.new_user_b.TabIndex = 7;
-            this.new_user_b.Text = "New User?";
-            this.new_user_b.UseVisualStyleBackColor = false;
-            // 
             // login_form
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -137,7 +138,7 @@
             this.Controls.Add(this.panel1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "login_form";
-            this.Opacity = 0.9D;
+            this.Opacity = 0.93D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Login";
             this.panel1.ResumeLayout(false);
