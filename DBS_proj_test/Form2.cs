@@ -161,5 +161,55 @@ namespace DBS_proj_test
         {
 
         }
+
+        private void button1_MouseHover(object sender, EventArgs e)
+        {
+            timer1.Stop();
+        }
+
+        private void button1_MouseLeave(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void button2_MouseHover(object sender, EventArgs e)
+        {
+            timer1.Stop();
+        }
+
+        private void button2_MouseLeave(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void button3_MouseLeave(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void button3_MouseHover(object sender, EventArgs e)
+        {
+            timer1.Stop();
+        }
+
+        private void button4_MouseHover(object sender, EventArgs e)
+        {
+            timer1.Stop();
+        }
+
+        private void button4_MouseLeave(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void button5_MouseHover(object sender, EventArgs e)
+        {
+            timer1.Stop();
+        }
+
+        private void button5_MouseLeave(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
     }
 }
