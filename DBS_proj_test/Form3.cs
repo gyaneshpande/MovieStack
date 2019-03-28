@@ -26,5 +26,10 @@ namespace DBS_proj_test
         {
             this.Hide();
         }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

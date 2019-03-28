@@ -11,3 +11,4 @@ D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\obj\Debug\DBS_proj_test.pdb
 D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\obj\Debug\DBS_proj_test.top_movies.resources
 D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\obj\Debug\DBS_proj_test.Form2.resources
 D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\obj\Debug\DBS_proj_test.login_form.resources
+D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\obj\Debug\DBS_proj_test.TVshows.resources

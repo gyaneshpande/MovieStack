@@ -15,13 +15,15 @@ namespace DBS_proj_test
         public Form2()
         {
             InitializeComponent();
-            this.tab_p.Hide();
+            //this.tab_p.Hide();
             timer1.Interval = 05;
             timer1.Start();
             button5.Location = new Point(button5.Location.X + button5.Width + 30,button5.Location.Y);
         }
-        login_form lf1 = new login_form();
-
+        //login_form lf1 = new login_form();
+        
+        
+       
 
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -36,6 +38,7 @@ namespace DBS_proj_test
 
         private void movie_b_Click(object sender, EventArgs e)
         {
+            
             this.tab_p.Show();
             tab_p.Size = movie_b.Size;
             tab_p.Left = movie_b.Left;
@@ -49,6 +52,10 @@ namespace DBS_proj_test
             tab_p.Size = tvshows_b.Size;
             tab_p.Left = tvshows_b.Left;
             tab_p.Height = 15;
+            TVshows f1 = new TVshows();
+            f1.Show();
+            
+
 
         }
 
@@ -85,8 +92,10 @@ namespace DBS_proj_test
 
         private void signin_b_Click(object sender, EventArgs e)
         {
-            
+            tab_p.Hide();
+            login_form lf1 = new login_form();
             lf1.Show();
+            //lf1.
         }
 
         private void panel2_Paint(object sender, PaintEventArgs e)
@@ -118,7 +127,10 @@ namespace DBS_proj_test
 
         private void button1_Click(object sender, EventArgs e)
         {
-
+            //String name = null;
+            //if (sender is Button)
+            //    name = (sender as Button).Name;
+            //MessageBox.Show(name);
         }
 
         private void button2_LocationChanged(object sender, EventArgs e)
@@ -234,6 +246,11 @@ namespace DBS_proj_test
             {
                 this.WindowState = FormWindowState.Normal;
             }
+
+        }
+
+        private void tab_p_Paint(object sender, PaintEventArgs e)
+        {
 
         }
     }

@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.restoredown_b = new System.Windows.Forms.Button();
+            this.minimize_b = new System.Windows.Forms.Button();
+            this.close_b = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.twitter_b = new System.Windows.Forms.Button();
             this.insta_b = new System.Windows.Forms.Button();
@@ -51,9 +54,6 @@
             this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.close_b = new System.Windows.Forms.Button();
-            this.minimize_b = new System.Windows.Forms.Button();
-            this.restoredown_b = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -85,6 +85,48 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1333, 148);
             this.panel1.TabIndex = 0;
+            // 
+            // restoredown_b
+            // 
+            this.restoredown_b.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.restoredown_b.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("restoredown_b.BackgroundImage")));
+            this.restoredown_b.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.restoredown_b.FlatAppearance.BorderSize = 0;
+            this.restoredown_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.restoredown_b.Location = new System.Drawing.Point(1291, -4);
+            this.restoredown_b.Name = "restoredown_b";
+            this.restoredown_b.Size = new System.Drawing.Size(22, 23);
+            this.restoredown_b.TabIndex = 6;
+            this.restoredown_b.UseVisualStyleBackColor = true;
+            this.restoredown_b.Click += new System.EventHandler(this.restoredown_b_Click);
+            // 
+            // minimize_b
+            // 
+            this.minimize_b.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.minimize_b.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("minimize_b.BackgroundImage")));
+            this.minimize_b.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.minimize_b.FlatAppearance.BorderSize = 0;
+            this.minimize_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimize_b.Location = new System.Drawing.Point(1272, -3);
+            this.minimize_b.Name = "minimize_b";
+            this.minimize_b.Size = new System.Drawing.Size(22, 23);
+            this.minimize_b.TabIndex = 6;
+            this.minimize_b.UseVisualStyleBackColor = true;
+            this.minimize_b.Click += new System.EventHandler(this.minimize_b_Click);
+            // 
+            // close_b
+            // 
+            this.close_b.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.close_b.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("close_b.BackgroundImage")));
+            this.close_b.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.close_b.FlatAppearance.BorderSize = 0;
+            this.close_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.close_b.Location = new System.Drawing.Point(1307, -3);
+            this.close_b.Name = "close_b";
+            this.close_b.Size = new System.Drawing.Size(35, 23);
+            this.close_b.TabIndex = 6;
+            this.close_b.UseVisualStyleBackColor = true;
+            this.close_b.Click += new System.EventHandler(this.close_b_Click);
             // 
             // pictureBox1
             // 
@@ -147,8 +189,9 @@
             this.tab_p.Location = new System.Drawing.Point(190, 133);
             this.tab_p.Margin = new System.Windows.Forms.Padding(5);
             this.tab_p.Name = "tab_p";
-            this.tab_p.Size = new System.Drawing.Size(488, 10);
+            this.tab_p.Size = new System.Drawing.Size(157, 15);
             this.tab_p.TabIndex = 1;
+            this.tab_p.Paint += new System.Windows.Forms.PaintEventHandler(this.tab_p_Paint);
             // 
             // watchlist_b
             // 
@@ -351,48 +394,6 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Top Rated Movies";
             // 
-            // close_b
-            // 
-            this.close_b.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.close_b.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("close_b.BackgroundImage")));
-            this.close_b.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.close_b.FlatAppearance.BorderSize = 0;
-            this.close_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.close_b.Location = new System.Drawing.Point(1307, -3);
-            this.close_b.Name = "close_b";
-            this.close_b.Size = new System.Drawing.Size(35, 23);
-            this.close_b.TabIndex = 6;
-            this.close_b.UseVisualStyleBackColor = true;
-            this.close_b.Click += new System.EventHandler(this.close_b_Click);
-            // 
-            // minimize_b
-            // 
-            this.minimize_b.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.minimize_b.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("minimize_b.BackgroundImage")));
-            this.minimize_b.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.minimize_b.FlatAppearance.BorderSize = 0;
-            this.minimize_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.minimize_b.Location = new System.Drawing.Point(1272, -3);
-            this.minimize_b.Name = "minimize_b";
-            this.minimize_b.Size = new System.Drawing.Size(22, 23);
-            this.minimize_b.TabIndex = 6;
-            this.minimize_b.UseVisualStyleBackColor = true;
-            this.minimize_b.Click += new System.EventHandler(this.minimize_b_Click);
-            // 
-            // restoredown_b
-            // 
-            this.restoredown_b.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.restoredown_b.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("restoredown_b.BackgroundImage")));
-            this.restoredown_b.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.restoredown_b.FlatAppearance.BorderSize = 0;
-            this.restoredown_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.restoredown_b.Location = new System.Drawing.Point(1291, -4);
-            this.restoredown_b.Name = "restoredown_b";
-            this.restoredown_b.Size = new System.Drawing.Size(22, 23);
-            this.restoredown_b.TabIndex = 6;
-            this.restoredown_b.UseVisualStyleBackColor = true;
-            this.restoredown_b.Click += new System.EventHandler(this.restoredown_b_Click);
-            // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
@@ -409,6 +410,7 @@
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Form2";
             this.Text = "MovieStack";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.Load += new System.EventHandler(this.Form2_Load);
             this.MouseHover += new System.EventHandler(this.Form2_MouseHover);
             this.panel1.ResumeLayout(false);
