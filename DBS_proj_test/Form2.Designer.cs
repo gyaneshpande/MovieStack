@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.twitter_b = new System.Windows.Forms.Button();
             this.insta_b = new System.Windows.Forms.Button();
             this.fb_b = new System.Windows.Forms.Button();
@@ -50,10 +51,12 @@
             this.button1 = new System.Windows.Forms.Button();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.close_b = new System.Windows.Forms.Button();
+            this.minimize_b = new System.Windows.Forms.Button();
+            this.restoredown_b = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            this.panel2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel1
@@ -62,6 +65,9 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             this.panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.panel1.Controls.Add(this.restoredown_b);
+            this.panel1.Controls.Add(this.minimize_b);
+            this.panel1.Controls.Add(this.close_b);
             this.panel1.Controls.Add(this.pictureBox1);
             this.panel1.Controls.Add(this.twitter_b);
             this.panel1.Controls.Add(this.insta_b);
@@ -80,6 +86,16 @@
             this.panel1.Size = new System.Drawing.Size(1333, 148);
             this.panel1.TabIndex = 0;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
+            this.pictureBox1.Location = new System.Drawing.Point(0, 7);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(182, 106);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.pictureBox1.TabIndex = 5;
+            this.pictureBox1.TabStop = false;
+            // 
             // twitter_b
             // 
             this.twitter_b.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
@@ -88,7 +104,7 @@
             this.twitter_b.FlatAppearance.BorderSize = 0;
             this.twitter_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.twitter_b.ForeColor = System.Drawing.Color.Black;
-            this.twitter_b.Location = new System.Drawing.Point(1230, 16);
+            this.twitter_b.Location = new System.Drawing.Point(1230, 38);
             this.twitter_b.Margin = new System.Windows.Forms.Padding(5);
             this.twitter_b.Name = "twitter_b";
             this.twitter_b.Size = new System.Drawing.Size(39, 35);
@@ -102,7 +118,7 @@
             this.insta_b.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.insta_b.FlatAppearance.BorderSize = 0;
             this.insta_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.insta_b.Location = new System.Drawing.Point(1176, 12);
+            this.insta_b.Location = new System.Drawing.Point(1176, 34);
             this.insta_b.Margin = new System.Windows.Forms.Padding(5);
             this.insta_b.Name = "insta_b";
             this.insta_b.Size = new System.Drawing.Size(44, 42);
@@ -116,7 +132,7 @@
             this.fb_b.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.fb_b.FlatAppearance.BorderSize = 0;
             this.fb_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.fb_b.Location = new System.Drawing.Point(1129, 13);
+            this.fb_b.Location = new System.Drawing.Point(1129, 35);
             this.fb_b.Margin = new System.Windows.Forms.Padding(5);
             this.fb_b.Name = "fb_b";
             this.fb_b.Size = new System.Drawing.Size(41, 39);
@@ -128,10 +144,10 @@
             // 
             this.tab_p.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(197)))), ((int)(((byte)(24)))));
             this.tab_p.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tab_p.Location = new System.Drawing.Point(190, 128);
+            this.tab_p.Location = new System.Drawing.Point(190, 133);
             this.tab_p.Margin = new System.Windows.Forms.Padding(5);
             this.tab_p.Name = "tab_p";
-            this.tab_p.Size = new System.Drawing.Size(488, 15);
+            this.tab_p.Size = new System.Drawing.Size(488, 10);
             this.tab_p.TabIndex = 1;
             // 
             // watchlist_b
@@ -140,10 +156,10 @@
             this.watchlist_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.watchlist_b.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.watchlist_b.ForeColor = System.Drawing.Color.White;
-            this.watchlist_b.Location = new System.Drawing.Point(523, 54);
+            this.watchlist_b.Location = new System.Drawing.Point(523, 78);
             this.watchlist_b.Margin = new System.Windows.Forms.Padding(5);
             this.watchlist_b.Name = "watchlist_b";
-            this.watchlist_b.Size = new System.Drawing.Size(157, 69);
+            this.watchlist_b.Size = new System.Drawing.Size(157, 52);
             this.watchlist_b.TabIndex = 4;
             this.watchlist_b.Text = "Watchlist";
             this.watchlist_b.UseVisualStyleBackColor = true;
@@ -155,12 +171,12 @@
             this.tvshows_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tvshows_b.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tvshows_b.ForeColor = System.Drawing.Color.White;
-            this.tvshows_b.Location = new System.Drawing.Point(357, 54);
+            this.tvshows_b.Location = new System.Drawing.Point(357, 78);
             this.tvshows_b.Margin = new System.Windows.Forms.Padding(5);
             this.tvshows_b.Name = "tvshows_b";
-            this.tvshows_b.Size = new System.Drawing.Size(157, 69);
+            this.tvshows_b.Size = new System.Drawing.Size(157, 52);
             this.tvshows_b.TabIndex = 4;
-            this.tvshows_b.Text = "TV Shows";
+            this.tvshows_b.Text = "TVshows";
             this.tvshows_b.UseVisualStyleBackColor = true;
             this.tvshows_b.Click += new System.EventHandler(this.tvshows_b_Click);
             // 
@@ -170,10 +186,10 @@
             this.movie_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.movie_b.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.movie_b.ForeColor = System.Drawing.Color.White;
-            this.movie_b.Location = new System.Drawing.Point(190, 54);
+            this.movie_b.Location = new System.Drawing.Point(190, 78);
             this.movie_b.Margin = new System.Windows.Forms.Padding(5);
             this.movie_b.Name = "movie_b";
-            this.movie_b.Size = new System.Drawing.Size(157, 69);
+            this.movie_b.Size = new System.Drawing.Size(157, 52);
             this.movie_b.TabIndex = 4;
             this.movie_b.Text = "Movies";
             this.movie_b.UseVisualStyleBackColor = true;
@@ -186,7 +202,7 @@
             this.signin_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.signin_b.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.signin_b.ForeColor = System.Drawing.Color.Black;
-            this.signin_b.Location = new System.Drawing.Point(1120, 85);
+            this.signin_b.Location = new System.Drawing.Point(1129, 92);
             this.signin_b.Margin = new System.Windows.Forms.Padding(5);
             this.signin_b.Name = "signin_b";
             this.signin_b.Size = new System.Drawing.Size(140, 38);
@@ -201,7 +217,7 @@
             this.search_b.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("search_b.BackgroundImage")));
             this.search_b.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.search_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.search_b.Location = new System.Drawing.Point(1053, 17);
+            this.search_b.Location = new System.Drawing.Point(1054, 41);
             this.search_b.Margin = new System.Windows.Forms.Padding(5);
             this.search_b.Name = "search_b";
             this.search_b.Size = new System.Drawing.Size(65, 28);
@@ -216,7 +232,7 @@
             "Titles",
             "TV episodes",
             "Names"});
-            this.comboBox1.Location = new System.Drawing.Point(875, 17);
+            this.comboBox1.Location = new System.Drawing.Point(875, 40);
             this.comboBox1.Margin = new System.Windows.Forms.Padding(5);
             this.comboBox1.Name = "comboBox1";
             this.comboBox1.Size = new System.Drawing.Size(166, 28);
@@ -228,7 +244,7 @@
             // 
             this.searchbar.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.searchbar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.searchbar.Location = new System.Drawing.Point(190, 18);
+            this.searchbar.Location = new System.Drawing.Point(190, 41);
             this.searchbar.Margin = new System.Windows.Forms.Padding(5);
             this.searchbar.Multiline = false;
             this.searchbar.Name = "searchbar";
@@ -335,26 +351,60 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "Top Rated Movies";
             // 
-            // pictureBox1
+            // close_b
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(0, 7);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(182, 106);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 5;
-            this.pictureBox1.TabStop = false;
+            this.close_b.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.close_b.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("close_b.BackgroundImage")));
+            this.close_b.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.close_b.FlatAppearance.BorderSize = 0;
+            this.close_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.close_b.Location = new System.Drawing.Point(1307, -3);
+            this.close_b.Name = "close_b";
+            this.close_b.Size = new System.Drawing.Size(35, 23);
+            this.close_b.TabIndex = 6;
+            this.close_b.UseVisualStyleBackColor = true;
+            this.close_b.Click += new System.EventHandler(this.close_b_Click);
+            // 
+            // minimize_b
+            // 
+            this.minimize_b.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.minimize_b.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("minimize_b.BackgroundImage")));
+            this.minimize_b.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.minimize_b.FlatAppearance.BorderSize = 0;
+            this.minimize_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.minimize_b.Location = new System.Drawing.Point(1272, -3);
+            this.minimize_b.Name = "minimize_b";
+            this.minimize_b.Size = new System.Drawing.Size(22, 23);
+            this.minimize_b.TabIndex = 6;
+            this.minimize_b.UseVisualStyleBackColor = true;
+            this.minimize_b.Click += new System.EventHandler(this.minimize_b_Click);
+            // 
+            // restoredown_b
+            // 
+            this.restoredown_b.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.restoredown_b.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("restoredown_b.BackgroundImage")));
+            this.restoredown_b.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
+            this.restoredown_b.FlatAppearance.BorderSize = 0;
+            this.restoredown_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.restoredown_b.Location = new System.Drawing.Point(1291, -4);
+            this.restoredown_b.Name = "restoredown_b";
+            this.restoredown_b.Size = new System.Drawing.Size(22, 23);
+            this.restoredown_b.TabIndex = 6;
+            this.restoredown_b.UseVisualStyleBackColor = true;
+            this.restoredown_b.Click += new System.EventHandler(this.restoredown_b_Click);
             // 
             // Form2
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(10F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.AutoValidate = System.Windows.Forms.AutoValidate.EnableAllowFocusChange;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.ClientSize = new System.Drawing.Size(1333, 692);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Margin = new System.Windows.Forms.Padding(5);
             this.Name = "Form2";
@@ -362,8 +412,8 @@
             this.Load += new System.EventHandler(this.Form2_Load);
             this.MouseHover += new System.EventHandler(this.Form2_MouseHover);
             this.panel1.ResumeLayout(false);
-            this.panel2.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            this.panel2.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -392,5 +442,8 @@
         private System.Windows.Forms.Button button5;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Button minimize_b;
+        private System.Windows.Forms.Button close_b;
+        private System.Windows.Forms.Button restoredown_b;
     }
 }

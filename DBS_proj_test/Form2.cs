@@ -20,6 +20,7 @@ namespace DBS_proj_test
             timer1.Start();
             button5.Location = new Point(button5.Location.X + button5.Width + 30,button5.Location.Y);
         }
+        login_form lf1 = new login_form();
 
 
 
@@ -84,7 +85,7 @@ namespace DBS_proj_test
 
         private void signin_b_Click(object sender, EventArgs e)
         {
-            login_form lf1 = new login_form();
+            
             lf1.Show();
         }
 
@@ -125,6 +126,7 @@ namespace DBS_proj_test
             if (button2.Right + button2.Width <= panel2.Left)
             {
                 button2.Left = panel2.Width;
+               
             }
         }
 
@@ -210,6 +212,29 @@ namespace DBS_proj_test
         private void button5_MouseLeave(object sender, EventArgs e)
         {
             timer1.Start();
+        }
+
+        private void close_b_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void minimize_b_Click(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Minimized;
+        }
+
+        private void restoredown_b_Click(object sender, EventArgs e)
+        {
+            if (WindowState.ToString() == "Normal")
+            {
+                this.WindowState = FormWindowState.Maximized;
+            }
+            else
+            {
+                this.WindowState = FormWindowState.Normal;
+            }
+
         }
     }
 }
