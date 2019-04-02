@@ -11,7 +11,11 @@ using System.Windows.Forms;
 namespace DBS_proj_test
 {
     public partial class Form2 : Form
-    {      
+    {
+        //TVshows f1 = new TVshows();
+        login_form lf1 = new login_form();
+        
+
         public Form2()
         {
             InitializeComponent();
@@ -19,6 +23,9 @@ namespace DBS_proj_test
             timer1.Interval = 05;
             timer1.Start();
             button5.Location = new Point(button5.Location.X + button5.Width + 30,button5.Location.Y);
+            button10.Location = new Point(button10.Location.X + button10.Width + 30, button10.Location.Y);
+            panel3.Hide();
+
         }
         //login_form lf1 = new login_form();
         
@@ -38,7 +45,9 @@ namespace DBS_proj_test
 
         private void movie_b_Click(object sender, EventArgs e)
         {
-            
+            //f1.Hide();
+            lf1.Hide();
+            panel3.Visible = false;
             this.tab_p.Show();
             tab_p.Size = movie_b.Size;
             tab_p.Left = movie_b.Left;
@@ -48,13 +57,13 @@ namespace DBS_proj_test
 
         private void tvshows_b_Click(object sender, EventArgs e)
         {
+            lf1.Hide();
             this.tab_p.Show();
             tab_p.Size = tvshows_b.Size;
             tab_p.Left = tvshows_b.Left;
             tab_p.Height = 15;
-            TVshows f1 = new TVshows();
-            f1.Show();
-            
+            panel3.Visible = true;
+            panel3.BringToFront();
 
 
         }
@@ -77,7 +86,7 @@ namespace DBS_proj_test
 
         private void fb_b_Click(object sender, EventArgs e)
         {
-
+            System.Diagnostics.Process.Start("http://www.facebook.com");
         }
 
         private void Form2_MouseHover(object sender, EventArgs e)
@@ -92,8 +101,8 @@ namespace DBS_proj_test
 
         private void signin_b_Click(object sender, EventArgs e)
         {
-            tab_p.Hide();
-            login_form lf1 = new login_form();
+            //tab_p.Hide();
+
             lf1.Show();
             //lf1.
         }
@@ -110,6 +119,11 @@ namespace DBS_proj_test
             button3.Location = new Point(button3.Location.X - 1, button3.Location.Y);
             button4.Location = new Point(button4.Location.X - 1, button4.Location.Y);
             button5.Location = new Point(button5.Location.X - 1, button5.Location.Y);
+            button6.Location = new Point(button6.Location.X - 1, button6.Location.Y);
+            button7.Location = new Point(button7.Location.X - 1, button7.Location.Y);
+            button8.Location = new Point(button8.Location.X - 1, button8.Location.Y);
+            button9.Location = new Point(button9.Location.X - 1, button9.Location.Y);
+            button10.Location = new Point(button10.Location.X - 1, button10.Location.Y);
         }
 
         private void button1_LocationChanged(object sender, EventArgs e)
@@ -252,6 +266,127 @@ namespace DBS_proj_test
         private void tab_p_Paint(object sender, PaintEventArgs e)
         {
 
+        }
+
+        private void panel3_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void button9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel4_LocationChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button9_LocationChanged(object sender, EventArgs e)
+        {
+            if (button9.Right + button9.Width <= panel4.Left)
+            {
+                button9.Left = panel4.Width;
+
+            }
+        }
+
+        private void button8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button8_LocationChanged(object sender, EventArgs e)
+        {
+            if (button8.Right + button8.Width <= panel4.Left)
+            {
+                button8.Left = panel4.Width;
+
+            }
+        }
+
+        private void button7_LocationChanged(object sender, EventArgs e)
+        {
+            if (button7.Right + button7.Width <= panel4.Left)
+            {
+                button7.Left = panel4.Width;
+
+            }
+        }
+
+        private void button6_LocationChanged(object sender, EventArgs e)
+        {
+            if (button6.Right + button6.Width <= panel4.Left)
+            {
+                button6.Left = panel4.Width;
+
+            }
+        }
+
+        private void button10_LocationChanged(object sender, EventArgs e)
+        {
+            if (button10.Right + button10.Width <= panel4.Left)
+            {
+                button10.Left = panel4.Width;
+
+            }
+        }
+
+        private void button9_MouseHover(object sender, EventArgs e)
+        {
+            timer1.Stop();
+        }
+
+        private void button8_MouseHover(object sender, EventArgs e)
+        {
+            timer1.Stop();
+        }
+
+        private void button7_MouseHover(object sender, EventArgs e)
+        {
+            timer1.Stop();
+        }
+
+        private void button6_MouseHover(object sender, EventArgs e)
+        {
+            timer1.Stop();
+        }
+
+        private void button10_MouseHover(object sender, EventArgs e)
+        {
+            timer1.Stop();
+        }
+
+        private void button10_MouseLeave(object sender, EventArgs e)
+        {
+            timer1.Start();
+
+        }
+
+        private void button6_MouseLeave(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void button7_MouseLeave(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void button8_MouseLeave(object sender, EventArgs e)
+        {
+            timer1.Start();
+        }
+
+        private void button9_MouseLeave(object sender, EventArgs e)
+        {
+            timer1.Start();
         }
     }
 }
