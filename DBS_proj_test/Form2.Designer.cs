@@ -55,13 +55,13 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -147,6 +147,7 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 5;
             this.pictureBox1.TabStop = false;
+            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // twitter_b
             // 
@@ -162,6 +163,7 @@
             this.twitter_b.Size = new System.Drawing.Size(39, 35);
             this.twitter_b.TabIndex = 1;
             this.twitter_b.UseVisualStyleBackColor = false;
+            this.twitter_b.Click += new System.EventHandler(this.twitter_b_Click);
             // 
             // insta_b
             // 
@@ -176,6 +178,7 @@
             this.insta_b.Size = new System.Drawing.Size(44, 42);
             this.insta_b.TabIndex = 1;
             this.insta_b.UseVisualStyleBackColor = false;
+            this.insta_b.Click += new System.EventHandler(this.insta_b_Click);
             // 
             // fb_b
             // 
@@ -209,7 +212,7 @@
             this.watchlist_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.watchlist_b.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.watchlist_b.ForeColor = System.Drawing.Color.White;
-            this.watchlist_b.Location = new System.Drawing.Point(523, 78);
+            this.watchlist_b.Location = new System.Drawing.Point(511, 78);
             this.watchlist_b.Margin = new System.Windows.Forms.Padding(5);
             this.watchlist_b.Name = "watchlist_b";
             this.watchlist_b.Size = new System.Drawing.Size(157, 52);
@@ -224,7 +227,7 @@
             this.tvshows_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.tvshows_b.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.tvshows_b.ForeColor = System.Drawing.Color.White;
-            this.tvshows_b.Location = new System.Drawing.Point(357, 78);
+            this.tvshows_b.Location = new System.Drawing.Point(350, 78);
             this.tvshows_b.Margin = new System.Windows.Forms.Padding(5);
             this.tvshows_b.Name = "tvshows_b";
             this.tvshows_b.Size = new System.Drawing.Size(157, 52);
@@ -414,6 +417,16 @@
             this.panel3.TabIndex = 3;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(230, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(180, 20);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Top Rated TV Shows";
+            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.button6);
@@ -494,16 +507,6 @@
             this.button10.LocationChanged += new System.EventHandler(this.button10_LocationChanged);
             this.button10.MouseLeave += new System.EventHandler(this.button10_MouseLeave);
             this.button10.MouseHover += new System.EventHandler(this.button10_MouseHover);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(230, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Top Rated TV Shows";
             // 
             // Form2
             // 

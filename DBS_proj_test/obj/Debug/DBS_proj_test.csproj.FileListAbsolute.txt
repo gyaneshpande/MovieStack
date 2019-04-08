@@ -8,6 +8,10 @@ D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\obj\Debug\DBS_proj_test.csproj.Gene
 D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\obj\Debug\DBS_proj_test.csproj.CoreCompileInputs.cache
 D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\obj\Debug\DBS_proj_test.exe
 D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\obj\Debug\DBS_proj_test.pdb
-D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\obj\Debug\DBS_proj_test.top_movies.resources
-D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\obj\Debug\DBS_proj_test.Form2.resources
 D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\obj\Debug\DBS_proj_test.login_form.resources
+D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\obj\Debug\DBS_proj_test.Form4.resources
+D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\bin\Debug\MySql.Data.dll
+D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\bin\Debug\Google.Protobuf.dll
+D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\bin\Debug\MySql.Data.xml
+D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\obj\Debug\DBS_proj_test.csproj.CopyComplete
+D:\DBS_proj\test\DBS_proj_test\DBS_proj_test\obj\Debug\DBS_proj_test.Form2.resources

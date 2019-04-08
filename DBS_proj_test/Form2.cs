@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -59,6 +59,7 @@ namespace DBS_proj_test
         {
             lf1.Hide();
             this.tab_p.Show();
+
             tab_p.Size = tvshows_b.Size;
             tab_p.Left = tvshows_b.Left;
             tab_p.Height = 15;
@@ -74,6 +75,10 @@ namespace DBS_proj_test
             tab_p.Size = watchlist_b.Size;
             tab_p.Left = watchlist_b.Left;
             tab_p.Height = 15;
+            if(signin_b.Text.Equals("Sign in"))
+            {
+                lf1.Show();
+            }
         }
 
         private void searchbar_TextChanged(object sender, EventArgs e)
@@ -136,7 +141,7 @@ namespace DBS_proj_test
 
         private void button2_Click(object sender, EventArgs e)
         {
-
+            
         }
 
         private void button1_Click(object sender, EventArgs e)
@@ -387,6 +392,21 @@ namespace DBS_proj_test
         private void button9_MouseLeave(object sender, EventArgs e)
         {
             timer1.Start();
+        }
+
+        private void insta_b_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://www.instagram.com/");
+        }
+
+        private void twitter_b_Click(object sender, EventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://twitter.com/");
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
