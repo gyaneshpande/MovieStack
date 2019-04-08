@@ -7,14 +7,36 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using MySql.Data.Types;
 
 namespace DBS_proj_test
 {
+
     public partial class Form2 : Form
     {
         //TVshows f1 = new TVshows();
         login_form lf1 = new login_form();
+        MySqlConnection connection;
+
         
+        public void DBConnect()
+        {
+            string server;
+            string database;
+            string uid;
+            string password;
+            server = "localhost";
+            database = "movie_stack";
+            uid = "root";
+            password = "password";
+            string connectionString;
+            connectionString = "SERVER=" + server + ";" + "DATABASE=" +
+            database + ";" + "UID=" + uid + ";" + "PASSWORD=" + password + ";";
+
+            connection = new MySqlConnection(connectionString);
+        }
+
 
         public Form2()
         {
@@ -107,6 +129,9 @@ namespace DBS_proj_test
         private void signin_b_Click(object sender, EventArgs e)
         {
             //tab_p.Hide();
+            //DBConnect();
+            //connection.Open();
+            
 
             lf1.Show();
             //lf1.
@@ -141,15 +166,31 @@ namespace DBS_proj_test
 
         private void button2_Click(object sender, EventArgs e)
         {
-            
+            DBConnect();
+            connection.Open();
+            MySqlCommand com = new MySqlCommand();
+            com.CommandText = "Select star_rating, running_time, release_date,movie_title, language from movies where movie_title= 'Shawshank Redemption'";
+            com.CommandType = CommandType.Text;
+            MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            DataRow dr;
+            da.Fill(ds, "tbl_movie");
+            dt = ds.Tables["tbl_movie"];
+            dr = dt.Rows[0];
+            Form4 f4 = new Form4();
+            f4.Show();
+            f4.disp_det(dr);
+            connection.Close();
+
         }
 
         private void button1_Click(object sender, EventArgs e)
         {
-            //String name = null;
-            //if (sender is Button)
-            //    name = (sender as Button).Name;
-            //MessageBox.Show(name);
+            String name = null;
+            if (sender is Button)
+                name = (sender as Button).Name;
+            MessageBox.Show(name);
         }
 
         private void button2_LocationChanged(object sender, EventArgs e)
@@ -406,6 +447,31 @@ namespace DBS_proj_test
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            //int i = 0;
+            DBConnect();
+            connection.Open();
+            MySqlCommand com = new MySqlCommand();
+            com.CommandText = "Select star_rating, running_time, release_date,movie_title, language from movies where movie_title= 'Fight Club'";
+            com.CommandType = CommandType.Text;
+            MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            DataRow dr ;
+            da.Fill(ds, "tbl_movie");
+            dt = ds.Tables["tbl_movie"];
+            dr=dt.Rows[0];
+            Form4 f4 = new Form4();
+            f4.Show();
+            f4.disp_det(dr);
+            connection.Close();
+            
+
+
 
         }
     }

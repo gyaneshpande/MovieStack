@@ -31,6 +31,24 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form2));
             this.panel1 = new System.Windows.Forms.Panel();
+            this.tab_p = new System.Windows.Forms.Panel();
+            this.watchlist_b = new System.Windows.Forms.Button();
+            this.tvshows_b = new System.Windows.Forms.Button();
+            this.movie_b = new System.Windows.Forms.Button();
+            this.signin_b = new System.Windows.Forms.Button();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.searchbar = new System.Windows.Forms.RichTextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.timer1 = new System.Windows.Forms.Timer(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.label2 = new System.Windows.Forms.Label();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.button4 = new System.Windows.Forms.Button();
+            this.button5 = new System.Windows.Forms.Button();
+            this.button3 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
             this.restoredown_b = new System.Windows.Forms.Button();
             this.minimize_b = new System.Windows.Forms.Button();
             this.close_b = new System.Windows.Forms.Button();
@@ -38,35 +56,17 @@
             this.twitter_b = new System.Windows.Forms.Button();
             this.insta_b = new System.Windows.Forms.Button();
             this.fb_b = new System.Windows.Forms.Button();
-            this.tab_p = new System.Windows.Forms.Panel();
-            this.watchlist_b = new System.Windows.Forms.Button();
-            this.tvshows_b = new System.Windows.Forms.Button();
-            this.movie_b = new System.Windows.Forms.Button();
-            this.signin_b = new System.Windows.Forms.Button();
             this.search_b = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
-            this.searchbar = new System.Windows.Forms.RichTextBox();
-            this.panel2 = new System.Windows.Forms.Panel();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
-            this.timer1 = new System.Windows.Forms.Timer(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
-            this.panel4 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
             this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
             this.panel4.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -95,6 +95,239 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(1333, 148);
             this.panel1.TabIndex = 0;
+            // 
+            // tab_p
+            // 
+            this.tab_p.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(197)))), ((int)(((byte)(24)))));
+            this.tab_p.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
+            this.tab_p.Location = new System.Drawing.Point(190, 133);
+            this.tab_p.Margin = new System.Windows.Forms.Padding(5);
+            this.tab_p.Name = "tab_p";
+            this.tab_p.Size = new System.Drawing.Size(157, 15);
+            this.tab_p.TabIndex = 1;
+            this.tab_p.Paint += new System.Windows.Forms.PaintEventHandler(this.tab_p_Paint);
+            // 
+            // watchlist_b
+            // 
+            this.watchlist_b.FlatAppearance.BorderSize = 0;
+            this.watchlist_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.watchlist_b.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.watchlist_b.ForeColor = System.Drawing.Color.White;
+            this.watchlist_b.Location = new System.Drawing.Point(511, 78);
+            this.watchlist_b.Margin = new System.Windows.Forms.Padding(5);
+            this.watchlist_b.Name = "watchlist_b";
+            this.watchlist_b.Size = new System.Drawing.Size(157, 52);
+            this.watchlist_b.TabIndex = 4;
+            this.watchlist_b.Text = "Watchlist";
+            this.watchlist_b.UseVisualStyleBackColor = true;
+            this.watchlist_b.Click += new System.EventHandler(this.watchlist_b_Click);
+            // 
+            // tvshows_b
+            // 
+            this.tvshows_b.FlatAppearance.BorderSize = 0;
+            this.tvshows_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.tvshows_b.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.tvshows_b.ForeColor = System.Drawing.Color.White;
+            this.tvshows_b.Location = new System.Drawing.Point(350, 78);
+            this.tvshows_b.Margin = new System.Windows.Forms.Padding(5);
+            this.tvshows_b.Name = "tvshows_b";
+            this.tvshows_b.Size = new System.Drawing.Size(157, 52);
+            this.tvshows_b.TabIndex = 4;
+            this.tvshows_b.Text = "TVshows";
+            this.tvshows_b.UseVisualStyleBackColor = true;
+            this.tvshows_b.Click += new System.EventHandler(this.tvshows_b_Click);
+            // 
+            // movie_b
+            // 
+            this.movie_b.FlatAppearance.BorderSize = 0;
+            this.movie_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.movie_b.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.movie_b.ForeColor = System.Drawing.Color.White;
+            this.movie_b.Location = new System.Drawing.Point(190, 78);
+            this.movie_b.Margin = new System.Windows.Forms.Padding(5);
+            this.movie_b.Name = "movie_b";
+            this.movie_b.Size = new System.Drawing.Size(157, 52);
+            this.movie_b.TabIndex = 4;
+            this.movie_b.Text = "Movies";
+            this.movie_b.UseVisualStyleBackColor = true;
+            this.movie_b.Click += new System.EventHandler(this.movie_b_Click);
+            // 
+            // signin_b
+            // 
+            this.signin_b.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(194)))), ((int)(((byte)(24)))));
+            this.signin_b.FlatAppearance.BorderSize = 0;
+            this.signin_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.signin_b.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.signin_b.ForeColor = System.Drawing.Color.Black;
+            this.signin_b.Location = new System.Drawing.Point(1129, 92);
+            this.signin_b.Margin = new System.Windows.Forms.Padding(5);
+            this.signin_b.Name = "signin_b";
+            this.signin_b.Size = new System.Drawing.Size(140, 38);
+            this.signin_b.TabIndex = 3;
+            this.signin_b.Text = "Sign in";
+            this.signin_b.UseVisualStyleBackColor = false;
+            this.signin_b.Click += new System.EventHandler(this.signin_b_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "Titles",
+            "TV episodes",
+            "Names"});
+            this.comboBox1.Location = new System.Drawing.Point(875, 40);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(5);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(166, 28);
+            this.comboBox1.TabIndex = 1;
+            this.comboBox1.Text = "All";
+            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // searchbar
+            // 
+            this.searchbar.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.searchbar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
+            this.searchbar.Location = new System.Drawing.Point(190, 41);
+            this.searchbar.Margin = new System.Windows.Forms.Padding(5);
+            this.searchbar.Multiline = false;
+            this.searchbar.Name = "searchbar";
+            this.searchbar.Size = new System.Drawing.Size(672, 27);
+            this.searchbar.TabIndex = 0;
+            this.searchbar.Text = "Find Movies, TV Shows";
+            this.searchbar.Click += new System.EventHandler(this.searchbar_Click);
+            this.searchbar.TextChanged += new System.EventHandler(this.searchbar_TextChanged);
+            // 
+            // panel2
+            // 
+            this.panel2.Controls.Add(this.button4);
+            this.panel2.Controls.Add(this.button5);
+            this.panel2.Controls.Add(this.button3);
+            this.panel2.Controls.Add(this.button2);
+            this.panel2.Controls.Add(this.button1);
+            this.panel2.Location = new System.Drawing.Point(190, 195);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(851, 206);
+            this.panel2.TabIndex = 1;
+            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
+            // 
+            // timer1
+            // 
+            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.label1.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(236, 166);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(157, 20);
+            this.label1.TabIndex = 2;
+            this.label1.Text = "Top Rated Movies";
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.label2);
+            this.panel3.Controls.Add(this.panel4);
+            this.panel3.Location = new System.Drawing.Point(0, 148);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(1333, 543);
+            this.panel3.TabIndex = 3;
+            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(230, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(180, 20);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Top Rated TV Shows";
+            // 
+            // panel4
+            // 
+            this.panel4.Controls.Add(this.button6);
+            this.panel4.Controls.Add(this.button7);
+            this.panel4.Controls.Add(this.button8);
+            this.panel4.Controls.Add(this.button9);
+            this.panel4.Controls.Add(this.button10);
+            this.panel4.Location = new System.Drawing.Point(190, 50);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(851, 206);
+            this.panel4.TabIndex = 2;
+            this.panel4.LocationChanged += new System.EventHandler(this.panel4_LocationChanged);
+            // 
+            // button4
+            // 
+            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
+            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button4.Location = new System.Drawing.Point(641, 15);
+            this.button4.Name = "button4";
+            this.button4.Size = new System.Drawing.Size(153, 171);
+            this.button4.TabIndex = 3;
+            this.button4.UseVisualStyleBackColor = true;
+            this.button4.LocationChanged += new System.EventHandler(this.button4_LocationChanged);
+            this.button4.Click += new System.EventHandler(this.button4_Click);
+            this.button4.MouseLeave += new System.EventHandler(this.button4_MouseLeave);
+            this.button4.MouseHover += new System.EventHandler(this.button4_MouseHover);
+            // 
+            // button5
+            // 
+            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
+            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button5.Location = new System.Drawing.Point(653, 15);
+            this.button5.Name = "button5";
+            this.button5.Size = new System.Drawing.Size(153, 171);
+            this.button5.TabIndex = 4;
+            this.button5.UseVisualStyleBackColor = true;
+            this.button5.LocationChanged += new System.EventHandler(this.button5_LocationChanged);
+            this.button5.Click += new System.EventHandler(this.button5_Click);
+            this.button5.MouseLeave += new System.EventHandler(this.button5_MouseLeave);
+            this.button5.MouseHover += new System.EventHandler(this.button5_MouseHover);
+            // 
+            // button3
+            // 
+            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
+            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button3.Location = new System.Drawing.Point(452, 15);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(153, 171);
+            this.button3.TabIndex = 2;
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.LocationChanged += new System.EventHandler(this.button3_LocationChanged);
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            this.button3.MouseLeave += new System.EventHandler(this.button3_MouseLeave);
+            this.button3.MouseHover += new System.EventHandler(this.button3_MouseHover);
+            // 
+            // button2
+            // 
+            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
+            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button2.Location = new System.Drawing.Point(259, 15);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(153, 171);
+            this.button2.TabIndex = 1;
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.LocationChanged += new System.EventHandler(this.button2_LocationChanged);
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.button2.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
+            this.button2.MouseHover += new System.EventHandler(this.button2_MouseHover);
+            // 
+            // button1
+            // 
+            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
+            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button1.Location = new System.Drawing.Point(65, 15);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(153, 171);
+            this.button1.TabIndex = 0;
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.LocationChanged += new System.EventHandler(this.button1_LocationChanged);
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
+            this.button1.MouseHover += new System.EventHandler(this.button1_MouseHover);
             // 
             // restoredown_b
             // 
@@ -195,78 +428,6 @@
             this.fb_b.UseVisualStyleBackColor = false;
             this.fb_b.Click += new System.EventHandler(this.fb_b_Click);
             // 
-            // tab_p
-            // 
-            this.tab_p.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(197)))), ((int)(((byte)(24)))));
-            this.tab_p.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
-            this.tab_p.Location = new System.Drawing.Point(190, 133);
-            this.tab_p.Margin = new System.Windows.Forms.Padding(5);
-            this.tab_p.Name = "tab_p";
-            this.tab_p.Size = new System.Drawing.Size(157, 15);
-            this.tab_p.TabIndex = 1;
-            this.tab_p.Paint += new System.Windows.Forms.PaintEventHandler(this.tab_p_Paint);
-            // 
-            // watchlist_b
-            // 
-            this.watchlist_b.FlatAppearance.BorderSize = 0;
-            this.watchlist_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.watchlist_b.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.watchlist_b.ForeColor = System.Drawing.Color.White;
-            this.watchlist_b.Location = new System.Drawing.Point(511, 78);
-            this.watchlist_b.Margin = new System.Windows.Forms.Padding(5);
-            this.watchlist_b.Name = "watchlist_b";
-            this.watchlist_b.Size = new System.Drawing.Size(157, 52);
-            this.watchlist_b.TabIndex = 4;
-            this.watchlist_b.Text = "Watchlist";
-            this.watchlist_b.UseVisualStyleBackColor = true;
-            this.watchlist_b.Click += new System.EventHandler(this.watchlist_b_Click);
-            // 
-            // tvshows_b
-            // 
-            this.tvshows_b.FlatAppearance.BorderSize = 0;
-            this.tvshows_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.tvshows_b.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.tvshows_b.ForeColor = System.Drawing.Color.White;
-            this.tvshows_b.Location = new System.Drawing.Point(350, 78);
-            this.tvshows_b.Margin = new System.Windows.Forms.Padding(5);
-            this.tvshows_b.Name = "tvshows_b";
-            this.tvshows_b.Size = new System.Drawing.Size(157, 52);
-            this.tvshows_b.TabIndex = 4;
-            this.tvshows_b.Text = "TVshows";
-            this.tvshows_b.UseVisualStyleBackColor = true;
-            this.tvshows_b.Click += new System.EventHandler(this.tvshows_b_Click);
-            // 
-            // movie_b
-            // 
-            this.movie_b.FlatAppearance.BorderSize = 0;
-            this.movie_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.movie_b.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.movie_b.ForeColor = System.Drawing.Color.White;
-            this.movie_b.Location = new System.Drawing.Point(190, 78);
-            this.movie_b.Margin = new System.Windows.Forms.Padding(5);
-            this.movie_b.Name = "movie_b";
-            this.movie_b.Size = new System.Drawing.Size(157, 52);
-            this.movie_b.TabIndex = 4;
-            this.movie_b.Text = "Movies";
-            this.movie_b.UseVisualStyleBackColor = true;
-            this.movie_b.Click += new System.EventHandler(this.movie_b_Click);
-            // 
-            // signin_b
-            // 
-            this.signin_b.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(194)))), ((int)(((byte)(24)))));
-            this.signin_b.FlatAppearance.BorderSize = 0;
-            this.signin_b.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.signin_b.Font = new System.Drawing.Font("Century", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.signin_b.ForeColor = System.Drawing.Color.Black;
-            this.signin_b.Location = new System.Drawing.Point(1129, 92);
-            this.signin_b.Margin = new System.Windows.Forms.Padding(5);
-            this.signin_b.Name = "signin_b";
-            this.signin_b.Size = new System.Drawing.Size(140, 38);
-            this.signin_b.TabIndex = 3;
-            this.signin_b.Text = "Sign in";
-            this.signin_b.UseVisualStyleBackColor = false;
-            this.signin_b.Click += new System.EventHandler(this.signin_b_Click);
-            // 
             // search_b
             // 
             this.search_b.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(245)))), ((int)(((byte)(197)))), ((int)(((byte)(24)))));
@@ -279,166 +440,6 @@
             this.search_b.Size = new System.Drawing.Size(65, 28);
             this.search_b.TabIndex = 2;
             this.search_b.UseVisualStyleBackColor = false;
-            // 
-            // comboBox1
-            // 
-            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Titles",
-            "TV episodes",
-            "Names"});
-            this.comboBox1.Location = new System.Drawing.Point(875, 40);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(166, 28);
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.Text = "All";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
-            // searchbar
-            // 
-            this.searchbar.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.searchbar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.searchbar.Location = new System.Drawing.Point(190, 41);
-            this.searchbar.Margin = new System.Windows.Forms.Padding(5);
-            this.searchbar.Multiline = false;
-            this.searchbar.Name = "searchbar";
-            this.searchbar.Size = new System.Drawing.Size(672, 27);
-            this.searchbar.TabIndex = 0;
-            this.searchbar.Text = "Find Movies, TV Shows";
-            this.searchbar.Click += new System.EventHandler(this.searchbar_Click);
-            this.searchbar.TextChanged += new System.EventHandler(this.searchbar_TextChanged);
-            // 
-            // panel2
-            // 
-            this.panel2.Controls.Add(this.button4);
-            this.panel2.Controls.Add(this.button5);
-            this.panel2.Controls.Add(this.button3);
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Location = new System.Drawing.Point(190, 195);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(851, 206);
-            this.panel2.TabIndex = 1;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
-            // 
-            // button4
-            // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button4.Location = new System.Drawing.Point(641, 15);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(153, 171);
-            this.button4.TabIndex = 3;
-            this.button4.UseVisualStyleBackColor = true;
-            this.button4.LocationChanged += new System.EventHandler(this.button4_LocationChanged);
-            this.button4.Click += new System.EventHandler(this.button4_Click);
-            this.button4.MouseLeave += new System.EventHandler(this.button4_MouseLeave);
-            this.button4.MouseHover += new System.EventHandler(this.button4_MouseHover);
-            // 
-            // button5
-            // 
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button5.Location = new System.Drawing.Point(653, 15);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(153, 171);
-            this.button5.TabIndex = 4;
-            this.button5.UseVisualStyleBackColor = true;
-            this.button5.LocationChanged += new System.EventHandler(this.button5_LocationChanged);
-            this.button5.Click += new System.EventHandler(this.button5_Click);
-            this.button5.MouseLeave += new System.EventHandler(this.button5_MouseLeave);
-            this.button5.MouseHover += new System.EventHandler(this.button5_MouseHover);
-            // 
-            // button3
-            // 
-            this.button3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button3.BackgroundImage")));
-            this.button3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button3.Location = new System.Drawing.Point(452, 15);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(153, 171);
-            this.button3.TabIndex = 2;
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.LocationChanged += new System.EventHandler(this.button3_LocationChanged);
-            this.button3.MouseLeave += new System.EventHandler(this.button3_MouseLeave);
-            this.button3.MouseHover += new System.EventHandler(this.button3_MouseHover);
-            // 
-            // button2
-            // 
-            this.button2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button2.BackgroundImage")));
-            this.button2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button2.Location = new System.Drawing.Point(259, 15);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(153, 171);
-            this.button2.TabIndex = 1;
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.LocationChanged += new System.EventHandler(this.button2_LocationChanged);
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            this.button2.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
-            this.button2.MouseHover += new System.EventHandler(this.button2_MouseHover);
-            // 
-            // button1
-            // 
-            this.button1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button1.BackgroundImage")));
-            this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button1.Location = new System.Drawing.Point(65, 15);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(153, 171);
-            this.button1.TabIndex = 0;
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.LocationChanged += new System.EventHandler(this.button1_LocationChanged);
-            this.button1.Click += new System.EventHandler(this.button1_Click);
-            this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            this.button1.MouseHover += new System.EventHandler(this.button1_MouseHover);
-            // 
-            // timer1
-            // 
-            this.timer1.Tick += new System.EventHandler(this.timer1_Tick);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.label1.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(236, 166);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(157, 20);
-            this.label1.TabIndex = 2;
-            this.label1.Text = "Top Rated Movies";
-            // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.label2);
-            this.panel3.Controls.Add(this.panel4);
-            this.panel3.Location = new System.Drawing.Point(0, 148);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(1333, 543);
-            this.panel3.TabIndex = 3;
-            this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(230, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Top Rated TV Shows";
-            // 
-            // panel4
-            // 
-            this.panel4.Controls.Add(this.button6);
-            this.panel4.Controls.Add(this.button7);
-            this.panel4.Controls.Add(this.button8);
-            this.panel4.Controls.Add(this.button9);
-            this.panel4.Controls.Add(this.button10);
-            this.panel4.Location = new System.Drawing.Point(190, 50);
-            this.panel4.Name = "panel4";
-            this.panel4.Size = new System.Drawing.Size(851, 206);
-            this.panel4.TabIndex = 2;
-            this.panel4.LocationChanged += new System.EventHandler(this.panel4_LocationChanged);
             // 
             // button6
             // 
@@ -529,11 +530,11 @@
             this.Load += new System.EventHandler(this.Form2_Load);
             this.MouseHover += new System.EventHandler(this.Form2_MouseHover);
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel3.ResumeLayout(false);
             this.panel3.PerformLayout();
             this.panel4.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
