@@ -169,7 +169,7 @@ namespace DBS_proj_test
             DBConnect();
             connection.Open();
             MySqlCommand com = new MySqlCommand();
-            com.CommandText = "Select star_rating, running_time, release_date,movie_title, language from movies where movie_title= 'Shawshank Redemption'";
+            com.CommandText = "Select * from movies where movie_title= 'Shawshank Redemption'";
             com.CommandType = CommandType.Text;
             MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
             DataSet ds = new DataSet();
@@ -187,10 +187,26 @@ namespace DBS_proj_test
 
         private void button1_Click(object sender, EventArgs e)
         {
-            String name = null;
-            if (sender is Button)
-                name = (sender as Button).Name;
-            MessageBox.Show(name);
+            //String name = null;
+            //if (sender is Button)
+            //    name = (sender as Button).Name;
+            //MessageBox.Show(name);
+            DBConnect();
+            connection.Open();
+            MySqlCommand com = new MySqlCommand();
+            com.CommandText = "Select * from movies where movie_title= 'Gangs of Wasseypur'";
+            com.CommandType = CommandType.Text;
+            MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            DataRow dr;
+            da.Fill(ds, "tbl_movie");
+            dt = ds.Tables["tbl_movie"];
+            dr = dt.Rows[0];
+            Form4 f4 = new Form4();
+            f4.Show();
+            f4.disp_det(dr);
+            connection.Close();
         }
 
         private void button2_LocationChanged(object sender, EventArgs e)
@@ -228,12 +244,44 @@ namespace DBS_proj_test
 
         private void button4_Click(object sender, EventArgs e)
         {
-
+            DBConnect();
+            connection.Open();
+            MySqlCommand com = new MySqlCommand();
+            com.CommandText = "Select * from movies where movie_title= 'The Godfather'";
+            com.CommandType = CommandType.Text;
+            MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            DataRow dr;
+            da.Fill(ds, "tbl_movie");
+            dt = ds.Tables["tbl_movie"];
+            dr = dt.Rows[0];
+            Form4 f4 = new Form4();
+            f4.Show();
+            f4.disp_det(dr);
+            connection.Close();
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-
+            
+            DBConnect();
+            connection.Open();
+            MySqlCommand com = new MySqlCommand();
+            com.CommandText = "Select * from movies where movie_title= 'The Usual Suspects'";
+            com.CommandType = CommandType.Text;
+            MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            DataRow dr;
+            da.Fill(ds, "tbl_movie");
+            dt = ds.Tables["tbl_movie"];
+            dr = dt.Rows[0];
+            Form4 f4 = new Form4();
+            f4.Show();
+            f4.disp_det(dr);
+            connection.Close();
+            
         }
 
         private void button1_MouseHover(object sender, EventArgs e)
@@ -321,12 +369,42 @@ namespace DBS_proj_test
 
         private void button9_Click(object sender, EventArgs e)
         {
-
+            DBConnect();
+            connection.Open();
+            MySqlCommand com = new MySqlCommand();
+            com.CommandText = "Select * from movies where movie_title= 'Game Of Thrones'";
+            com.CommandType = CommandType.Text;
+            MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            DataRow dr;
+            da.Fill(ds, "tbl_movie");
+            dt = ds.Tables["tbl_movie"];
+            dr = dt.Rows[0];
+            Form4 f4 = new Form4();
+            f4.Show();
+            f4.disp_det(dr);
+            connection.Close();
         }
 
         private void button6_Click(object sender, EventArgs e)
         {
-
+            DBConnect();
+            connection.Open();
+            MySqlCommand com = new MySqlCommand();
+            com.CommandText = "Select * from movies where movie_title= 'Friends'";
+            com.CommandType = CommandType.Text;
+            MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            DataRow dr;
+            da.Fill(ds, "tbl_movie");
+            dt = ds.Tables["tbl_movie"];
+            dr = dt.Rows[0];
+            Form4 f4 = new Form4();
+            f4.Show();
+            f4.disp_det(dr);
+            connection.Close();
         }
 
         private void panel4_LocationChanged(object sender, EventArgs e)
@@ -345,7 +423,22 @@ namespace DBS_proj_test
 
         private void button8_Click(object sender, EventArgs e)
         {
-
+            DBConnect();
+            connection.Open();
+            MySqlCommand com = new MySqlCommand();
+            com.CommandText = "Select * from movies where movie_title= 'Sacred Games'";
+            com.CommandType = CommandType.Text;
+            MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            DataRow dr;
+            da.Fill(ds, "tbl_movie");
+            dt = ds.Tables["tbl_movie"];
+            dr = dt.Rows[0];
+            Form4 f4 = new Form4();
+            f4.Show();
+            f4.disp_det(dr);
+            connection.Close();
         }
 
         private void button8_LocationChanged(object sender, EventArgs e)
@@ -456,15 +549,21 @@ namespace DBS_proj_test
             DBConnect();
             connection.Open();
             MySqlCommand com = new MySqlCommand();
-            com.CommandText = "Select star_rating, running_time, release_date,movie_title, language from movies where movie_title= 'Fight Club'";
+            com.CommandText = "Select * from movies where movie_title= 'Fight Club'";
             com.CommandType = CommandType.Text;
+            MySqlCommand com1 = new MySqlCommand();
             MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
             DataSet ds = new DataSet();
+            DataSet d1 = new DataSet();
             DataTable dt = new DataTable();
             DataRow dr ;
             da.Fill(ds, "tbl_movie");
             dt = ds.Tables["tbl_movie"];
             dr=dt.Rows[0];
+            //com1.CommandText = "Select genre_dec from movie_genre natural join genre where movie_id=" + dr.["movie_id"];
+            com1.CommandType = CommandType.Text;
+            //MySqlDataAdapter da1 = new MySqlDataAdapter(com1.CommandText,connection);
+
             Form4 f4 = new Form4();
             f4.Show();
             f4.disp_det(dr);
@@ -473,6 +572,52 @@ namespace DBS_proj_test
 
 
 
+        }
+
+        private void search_b_Click(object sender, EventArgs e)
+        {
+            Form5 f = new Form5();
+            f.Show();
+        }
+
+        private void button7_Click(object sender, EventArgs e)
+        {
+            DBConnect();
+            connection.Open();
+            MySqlCommand com = new MySqlCommand();
+            com.CommandText = "Select * from movies where movie_title= 'Breaking Bad'";
+            com.CommandType = CommandType.Text;
+            MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            DataRow dr;
+            da.Fill(ds, "tbl_movie");
+            dt = ds.Tables["tbl_movie"];
+            dr = dt.Rows[0];
+            Form4 f4 = new Form4();
+            f4.Show();
+            f4.disp_det(dr);
+            connection.Close();
+        }
+
+        private void button10_Click(object sender, EventArgs e)
+        {
+            DBConnect();
+            connection.Open();
+            MySqlCommand com = new MySqlCommand();
+            com.CommandText = "Select * from movies where movie_title= 'Sherlock'";
+            com.CommandType = CommandType.Text;
+            MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            DataRow dr;
+            da.Fill(ds, "tbl_movie");
+            dt = ds.Tables["tbl_movie"];
+            dr = dt.Rows[0];
+            Form4 f4 = new Form4();
+            f4.Show();
+            f4.disp_det(dr);
+            connection.Close();
         }
     }
 }
