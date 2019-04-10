@@ -43,6 +43,15 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.desc = new System.Windows.Forms.Label();
+            this.wishlist = new System.Windows.Forms.Button();
+            this.actr1 = new System.Windows.Forms.LinkLabel();
+            this.actr2 = new System.Windows.Forms.LinkLabel();
+            this.actr3 = new System.Windows.Forms.LinkLabel();
+            this.dir = new System.Windows.Forms.LinkLabel();
+            this.wri = new System.Windows.Forms.LinkLabel();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
@@ -66,6 +75,7 @@
             this.label1.Size = new System.Drawing.Size(19, 25);
             this.label1.TabIndex = 1;
             this.label1.Text = ".";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // pictureBox1
             // 
@@ -110,11 +120,11 @@
             // 
             this.runn_time.AutoSize = true;
             this.runn_time.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
-            this.runn_time.Font = new System.Drawing.Font("Centaur", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.runn_time.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.runn_time.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
             this.runn_time.Location = new System.Drawing.Point(296, 78);
             this.runn_time.Name = "runn_time";
-            this.runn_time.Size = new System.Drawing.Size(58, 16);
+            this.runn_time.Size = new System.Drawing.Size(72, 16);
             this.runn_time.TabIndex = 5;
             this.runn_time.Text = "runn_time";
             // 
@@ -148,7 +158,7 @@
             this.lang.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.lang.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lang.ForeColor = System.Drawing.Color.White;
-            this.lang.Location = new System.Drawing.Point(503, 69);
+            this.lang.Location = new System.Drawing.Point(514, 70);
             this.lang.Name = "lang";
             this.lang.Size = new System.Drawing.Size(34, 16);
             this.lang.TabIndex = 8;
@@ -157,6 +167,9 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
+            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.label6);
+            this.panel2.Controls.Add(this.label5);
             this.panel2.Controls.Add(this.star_rating);
             this.panel2.Controls.Add(this.pictureBox1);
             this.panel2.Controls.Add(this.label1);
@@ -198,18 +211,116 @@
             // 
             // desc
             // 
-            this.desc.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.desc.Font = new System.Drawing.Font("Century", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.desc.Location = new System.Drawing.Point(280, 170);
             this.desc.Name = "desc";
             this.desc.Size = new System.Drawing.Size(655, 45);
             this.desc.TabIndex = 13;
             this.desc.Text = ".";
             // 
+            // wishlist
+            // 
+            this.wishlist.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(145)))), ((int)(((byte)(234)))));
+            this.wishlist.FlatAppearance.BorderSize = 0;
+            this.wishlist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.wishlist.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.wishlist.ForeColor = System.Drawing.Color.White;
+            this.wishlist.Location = new System.Drawing.Point(280, 457);
+            this.wishlist.Name = "wishlist";
+            this.wishlist.Size = new System.Drawing.Size(122, 34);
+            this.wishlist.TabIndex = 14;
+            this.wishlist.Text = "Add to Wishlist";
+            this.wishlist.UseVisualStyleBackColor = false;
+            this.wishlist.Click += new System.EventHandler(this.wishlist_Click);
+            // 
+            // actr1
+            // 
+            this.actr1.Location = new System.Drawing.Point(363, 272);
+            this.actr1.Name = "actr1";
+            this.actr1.Size = new System.Drawing.Size(103, 32);
+            this.actr1.TabIndex = 15;
+            this.actr1.TabStop = true;
+            this.actr1.Text = "linkLabel1";
+            // 
+            // actr2
+            // 
+            this.actr2.Location = new System.Drawing.Point(472, 272);
+            this.actr2.Name = "actr2";
+            this.actr2.Size = new System.Drawing.Size(103, 32);
+            this.actr2.TabIndex = 16;
+            this.actr2.TabStop = true;
+            this.actr2.Text = "linkLabel2";
+            // 
+            // actr3
+            // 
+            this.actr3.Location = new System.Drawing.Point(591, 272);
+            this.actr3.Name = "actr3";
+            this.actr3.Size = new System.Drawing.Size(110, 32);
+            this.actr3.TabIndex = 17;
+            this.actr3.TabStop = true;
+            this.actr3.Text = "linkLabel3";
+            // 
+            // dir
+            // 
+            this.dir.AutoSize = true;
+            this.dir.Location = new System.Drawing.Point(363, 318);
+            this.dir.Name = "dir";
+            this.dir.Size = new System.Drawing.Size(55, 13);
+            this.dir.TabIndex = 18;
+            this.dir.TabStop = true;
+            this.dir.Text = "linkLabel4";
+            // 
+            // wri
+            // 
+            this.wri.AutoSize = true;
+            this.wri.Location = new System.Drawing.Point(363, 368);
+            this.wri.Name = "wri";
+            this.wri.Size = new System.Drawing.Size(55, 13);
+            this.wri.TabIndex = 19;
+            this.wri.TabStop = true;
+            this.wri.Text = "linkLabel5";
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(344, 67);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(13, 23);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "|";
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(409, 69);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(13, 23);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "|";
+            // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.Location = new System.Drawing.Point(497, 67);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(13, 23);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "|";
+            // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1000, 540);
+            this.Controls.Add(this.wri);
+            this.Controls.Add(this.dir);
+            this.Controls.Add(this.actr3);
+            this.Controls.Add(this.actr2);
+            this.Controls.Add(this.actr1);
+            this.Controls.Add(this.wishlist);
             this.Controls.Add(this.desc);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
@@ -250,5 +361,14 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label desc;
+        private System.Windows.Forms.Button wishlist;
+        private System.Windows.Forms.LinkLabel actr1;
+        private System.Windows.Forms.LinkLabel actr2;
+        private System.Windows.Forms.LinkLabel actr3;
+        private System.Windows.Forms.LinkLabel dir;
+        private System.Windows.Forms.LinkLabel wri;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label5;
     }
 }

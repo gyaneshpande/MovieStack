@@ -131,8 +131,9 @@ namespace DBS_proj_test
             //tab_p.Hide();
             //DBConnect();
             //connection.Open();
-            
 
+
+            lf1.clr_txtbox();
             lf1.Show();
             //lf1.
         }
@@ -203,9 +204,33 @@ namespace DBS_proj_test
             da.Fill(ds, "tbl_movie");
             dt = ds.Tables["tbl_movie"];
             dr = dt.Rows[0];
+            String mov_nam = dr["movie_title"].ToString();
+            //MessageBox.Show(mov_nam);
+            MySqlCommand com1 = new MySqlCommand();
+            com1.CommandText = "select first_name, last_name, description from profession natural join people natural join movie_people where movie_people.movie_id=(select movie_id from movies where movie_title ='"+mov_nam+"')";
+            com1.CommandType = CommandType.Text;
+            MySqlDataAdapter da1 = new MySqlDataAdapter(com1.CommandText, connection);
+            DataSet ds1 = new DataSet();
+            DataTable dt1 = new DataTable();
+            DataRow dr1;
+            int i = 0;
+            da1.Fill(ds1, "tbl_peeps");
+            dt1 = ds1.Tables["tbl_peeps"];
+            //dr1 = dt1.Rows[i];
+            i = dt1.Rows.Count;
+            //MessageBox.Show(i.ToString());
+
+
             Form4 f4 = new Form4();
             f4.Show();
             f4.disp_det(dr);
+            for (int j = 0; j < i; j++)
+            {
+                dr1 = dt1.Rows[j];
+                f4.disp_people(dr1);
+
+            }
+            //f4.disp_people(dr1);
             connection.Close();
         }
 
@@ -540,12 +565,13 @@ namespace DBS_proj_test
 
         private void pictureBox1_Click(object sender, EventArgs e)
         {
-
+            MessageBox.Show("Made with love by MovieStack team");
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
             //int i = 0;
+            /*
             DBConnect();
             connection.Open();
             MySqlCommand com = new MySqlCommand();
@@ -553,6 +579,7 @@ namespace DBS_proj_test
             com.CommandType = CommandType.Text;
             MySqlCommand com1 = new MySqlCommand();
             MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
+            String mov_nam = dr["movie_title"].ToString();
             DataSet ds = new DataSet();
             DataSet d1 = new DataSet();
             DataTable dt = new DataTable();
@@ -563,12 +590,72 @@ namespace DBS_proj_test
             //com1.CommandText = "Select genre_dec from movie_genre natural join genre where movie_id=" + dr.["movie_id"];
             com1.CommandType = CommandType.Text;
             //MySqlDataAdapter da1 = new MySqlDataAdapter(com1.CommandText,connection);
+            MySqlCommand com1 = new MySqlCommand();
+            com1.CommandText = "select first_name, last_name, description from profession natural join people natural join movie_people where movie_people.movie_id=(select movie_id from movies where movie_title ='" + mov_nam + "')";
+            com1.CommandType = CommandType.Text;
+            MySqlDataAdapter da1 = new MySqlDataAdapter(com1.CommandText, connection);
+            DataSet ds1 = new DataSet();
+            DataTable dt1 = new DataTable();
+            DataRow dr1;
+            int i = 0;
+            da1.Fill(ds1, "tbl_peeps");
+            dt1 = ds1.Tables["tbl_peeps"];
+            //dr1 = dt1.Rows[i];
+            i = dt1.Rows.Count;
+            MessageBox.Show(i.ToString());
 
             Form4 f4 = new Form4();
             f4.Show();
             f4.disp_det(dr);
+            for (int j = 0; j < i; j++)
+            {
+                dr1 = dt1.Rows[j];
+                f4.disp_people(dr1);
+
+            }
             connection.Close();
-            
+            */
+            DBConnect();
+            connection.Open();
+            MySqlCommand com = new MySqlCommand();
+            com.CommandText = "Select * from movies where movie_title= 'Fight Club'";
+            com.CommandType = CommandType.Text;
+            MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            DataRow dr;
+            da.Fill(ds, "tbl_movie");
+            dt = ds.Tables["tbl_movie"];
+            dr = dt.Rows[0];
+            String mov_nam = dr["movie_title"].ToString();
+            //MessageBox.Show(mov_nam);
+            MySqlCommand com1 = new MySqlCommand();
+            com1.CommandText = "select first_name, last_name, description from profession natural join people natural join movie_people where movie_people.movie_id=(select movie_id from movies where movie_title ='" + mov_nam + "')";
+            com1.CommandType = CommandType.Text;
+            MySqlDataAdapter da1 = new MySqlDataAdapter(com1.CommandText, connection);
+            DataSet ds1 = new DataSet();
+            DataTable dt1 = new DataTable();
+            DataRow dr1;
+            int i = 0;
+            da1.Fill(ds1, "tbl_peeps");
+            dt1 = ds1.Tables["tbl_peeps"];
+            //dr1 = dt1.Rows[i];
+            i = dt1.Rows.Count;
+            //MessageBox.Show(i.ToString());
+
+
+            Form4 f4 = new Form4();
+            f4.Show();
+            f4.disp_det(dr);
+            for (int j = 0; j < i; j++)
+            {
+                dr1 = dt1.Rows[j];
+                f4.disp_people(dr1);
+
+            }
+            //f4.disp_people(dr1);
+            connection.Close();
+
 
 
 

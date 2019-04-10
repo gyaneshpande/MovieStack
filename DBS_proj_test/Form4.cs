@@ -18,6 +18,7 @@ namespace DBS_proj_test
         {
             InitializeComponent();
         }
+        int c = 0;
 
         public void disp_det(DataRow dr)
         {
@@ -39,6 +40,29 @@ namespace DBS_proj_test
             desc.Text = dr["description"].ToString();
            // pictureBox1.Image=Properties.Resources.
         }
+        public void disp_people (DataRow dr)
+        {
+            //DataRow dr;
+            //int i = 0;
+            //dr = dt.Rows[0];
+            //int count = dt.Rows.Count;
+            //MessageBox.Show(c.ToString());
+            //int c = 0;
+            if(dr["description"].Equals("Actor"))
+            {
+                if(c==0)
+                    actr1.Text = dr["first_name"].ToString()+" "+ dr["last_name"].ToString();
+                if(c==1)
+                    actr2.Text= dr["first_name"].ToString() +" "+dr["last_name"].ToString();
+                if (c == 2)
+                    actr3.Text = dr["first_name"].ToString() + " " + dr["last_name"].ToString();
+            }
+            if (dr["description"].Equals("Director"))
+                dir.Text= dr["first_name"].ToString() +" "+ dr["last_name"].ToString();
+            if (dr["description"].Equals("Writer"))
+                wri.Text = dr["first_name"].ToString() + " " + dr["last_name"].ToString();
+            c++;
+        }
 
         private void Form4_Load(object sender, EventArgs e)
         {
@@ -48,6 +72,17 @@ namespace DBS_proj_test
         private void back_b_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void wishlist_Click(object sender, EventArgs e)
+        {
+            //Form2 f = new Form2();
+            
         }
     }
 }

@@ -17,7 +17,19 @@ namespace DBS_proj_test
         {
             InitializeComponent();
             panel2.Hide();
+            //textBox1.Clear();
+            //textBox2.Clear();
 
+        }
+        public void clr_txtbox()
+        {
+            textBox1.Clear();
+            textBox2.Clear();
+            textBox3.Clear();
+            textBox4.Clear();
+            textBox5.Clear();
+            textBox6.Clear();
+            textBox7.Clear();
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -45,6 +57,18 @@ namespace DBS_proj_test
         {
             panel2.Show();
             panel2.BringToFront();
+        }
+
+        private void login_button_Click(object sender, EventArgs e)
+        {
+            //login_button.Text = "test";
+            
+            
+            if(textBox1.Text.Equals("admin") && textBox2.Text.Equals("password"))
+            {
+                MessageBox.Show("Login Successful");
+                this.Hide();
+            }
         }
     }
 }
