@@ -44,7 +44,6 @@
             this.movie_b = new System.Windows.Forms.Button();
             this.signin_b = new System.Windows.Forms.Button();
             this.search_b = new System.Windows.Forms.Button();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
             this.searchbar = new System.Windows.Forms.RichTextBox();
             this.panel2 = new System.Windows.Forms.Panel();
             this.button4 = new System.Windows.Forms.Button();
@@ -55,13 +54,13 @@
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.label2 = new System.Windows.Forms.Label();
             this.panel4 = new System.Windows.Forms.Panel();
             this.button6 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
             this.button8 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
             this.button10 = new System.Windows.Forms.Button();
+            this.button9 = new System.Windows.Forms.Button();
+            this.label2 = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
@@ -88,7 +87,6 @@
             this.panel1.Controls.Add(this.movie_b);
             this.panel1.Controls.Add(this.signin_b);
             this.panel1.Controls.Add(this.search_b);
-            this.panel1.Controls.Add(this.comboBox1);
             this.panel1.Controls.Add(this.searchbar);
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Margin = new System.Windows.Forms.Padding(5);
@@ -281,22 +279,6 @@
             this.search_b.UseVisualStyleBackColor = false;
             this.search_b.Click += new System.EventHandler(this.search_b_Click);
             // 
-            // comboBox1
-            // 
-            this.comboBox1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(117)))), ((int)(((byte)(117)))), ((int)(((byte)(117)))));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Items.AddRange(new object[] {
-            "Titles",
-            "TV episodes",
-            "Names"});
-            this.comboBox1.Location = new System.Drawing.Point(875, 40);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(5);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(166, 28);
-            this.comboBox1.TabIndex = 1;
-            this.comboBox1.Text = "All";
-            this.comboBox1.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
-            // 
             // searchbar
             // 
             this.searchbar.Font = new System.Drawing.Font("Century", 8.25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -305,9 +287,9 @@
             this.searchbar.Margin = new System.Windows.Forms.Padding(5);
             this.searchbar.Multiline = false;
             this.searchbar.Name = "searchbar";
-            this.searchbar.Size = new System.Drawing.Size(672, 27);
+            this.searchbar.Size = new System.Drawing.Size(851, 27);
             this.searchbar.TabIndex = 0;
-            this.searchbar.Text = "Find Movies, TV Shows";
+            this.searchbar.Text = "";
             this.searchbar.Click += new System.EventHandler(this.searchbar_Click);
             this.searchbar.TextChanged += new System.EventHandler(this.searchbar_TextChanged);
             // 
@@ -419,16 +401,6 @@
             this.panel3.TabIndex = 3;
             this.panel3.Paint += new System.Windows.Forms.PaintEventHandler(this.panel3_Paint);
             // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(230, 20);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(180, 20);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Top Rated TV Shows";
-            // 
             // panel4
             // 
             this.panel4.Controls.Add(this.button6);
@@ -484,6 +456,20 @@
             this.button8.MouseLeave += new System.EventHandler(this.button8_MouseLeave);
             this.button8.MouseHover += new System.EventHandler(this.button8_MouseHover);
             // 
+            // button10
+            // 
+            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
+            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.button10.Location = new System.Drawing.Point(653, 15);
+            this.button10.Name = "button10";
+            this.button10.Size = new System.Drawing.Size(153, 171);
+            this.button10.TabIndex = 1;
+            this.button10.UseVisualStyleBackColor = true;
+            this.button10.LocationChanged += new System.EventHandler(this.button10_LocationChanged);
+            this.button10.Click += new System.EventHandler(this.button10_Click);
+            this.button10.MouseLeave += new System.EventHandler(this.button10_MouseLeave);
+            this.button10.MouseHover += new System.EventHandler(this.button10_MouseHover);
+            // 
             // button9
             // 
             this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
@@ -498,19 +484,15 @@
             this.button9.MouseLeave += new System.EventHandler(this.button9_MouseLeave);
             this.button9.MouseHover += new System.EventHandler(this.button9_MouseHover);
             // 
-            // button10
+            // label2
             // 
-            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
-            this.button10.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.button10.Location = new System.Drawing.Point(653, 15);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(153, 171);
-            this.button10.TabIndex = 1;
-            this.button10.UseVisualStyleBackColor = true;
-            this.button10.LocationChanged += new System.EventHandler(this.button10_LocationChanged);
-            this.button10.Click += new System.EventHandler(this.button10_Click);
-            this.button10.MouseLeave += new System.EventHandler(this.button10_MouseLeave);
-            this.button10.MouseHover += new System.EventHandler(this.button10_MouseHover);
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(230, 20);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(180, 20);
+            this.label2.TabIndex = 3;
+            this.label2.Text = "Top Rated TV Shows";
             // 
             // Form2
             // 
@@ -547,7 +529,6 @@
 
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.RichTextBox searchbar;
-        private System.Windows.Forms.ComboBox comboBox1;
         private System.Windows.Forms.Panel tab_p;
         private System.Windows.Forms.Button watchlist_b;
         private System.Windows.Forms.Button tvshows_b;

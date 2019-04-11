@@ -18,6 +18,8 @@ namespace DBS_proj_test
         //TVshows f1 = new TVshows();
         login_form lf1 = new login_form();
         MySqlConnection connection;
+        String user_id= null;
+        //if()
 
         
         public void DBConnect()
@@ -50,6 +52,11 @@ namespace DBS_proj_test
 
         }
         //login_form lf1 = new login_form();
+        public Form2(String usr_id)
+        {
+            this.user_id = usr_id;
+            
+        }
         
         
        
@@ -57,7 +64,8 @@ namespace DBS_proj_test
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            //int a = comboBox1.SelectedIndex;
+            //MessageBox.Show(a.ToString());
         }
 
         private void Form2_Load(object sender, EventArgs e)
@@ -108,6 +116,11 @@ namespace DBS_proj_test
             //searchbar.Text = null;
             searchbar.Font = new Font("Century", 10);
             searchbar.ForeColor = panel1.ForeColor;
+            String str = searchbar.Text;
+            //Form5 f5 = new Form5(str);
+            //Form5 f1 = new Form5();
+            //f1.Show();
+            //f5.Show();
            // searchbar.Font = new Font()
         }
 
@@ -131,8 +144,9 @@ namespace DBS_proj_test
             //tab_p.Hide();
             //DBConnect();
             //connection.Open();
+            //this.Text = "" + user_id;
 
-
+            //MessageBox.Show(user_id.ToString());
             lf1.clr_txtbox();
             lf1.Show();
             //lf1.
@@ -167,6 +181,7 @@ namespace DBS_proj_test
 
         private void button2_Click(object sender, EventArgs e)
         {
+            /*
             DBConnect();
             connection.Open();
             MySqlCommand com = new MySqlCommand();
@@ -182,6 +197,47 @@ namespace DBS_proj_test
             Form4 f4 = new Form4();
             f4.Show();
             f4.disp_det(dr);
+            connection.Close();
+            */
+            DBConnect();
+            connection.Open();
+            MySqlCommand com = new MySqlCommand();
+            com.CommandText = "Select * from movies where movie_title= 'Shawshank Redemption'";
+            com.CommandType = CommandType.Text;
+            MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            DataRow dr;
+            da.Fill(ds, "tbl_movie");
+            dt = ds.Tables["tbl_movie"];
+            dr = dt.Rows[0];
+            String mov_nam = dr["movie_title"].ToString();
+            //MessageBox.Show(mov_nam);
+            MySqlCommand com1 = new MySqlCommand();
+            com1.CommandText = "select first_name, last_name, description from profession natural join people natural join movie_people where movie_people.movie_id=(select movie_id from movies where movie_title ='" + mov_nam + "')";
+            com1.CommandType = CommandType.Text;
+            MySqlDataAdapter da1 = new MySqlDataAdapter(com1.CommandText, connection);
+            DataSet ds1 = new DataSet();
+            DataTable dt1 = new DataTable();
+            DataRow dr1;
+            int i = 0;
+            da1.Fill(ds1, "tbl_peeps");
+            dt1 = ds1.Tables["tbl_peeps"];
+            //dr1 = dt1.Rows[i];
+            i = dt1.Rows.Count;
+            //MessageBox.Show(i.ToString());
+
+
+            Form4 f4 = new Form4();
+            f4.Show();
+            f4.disp_det(dr);
+            for (int j = 0; j < i; j++)
+            {
+                dr1 = dt1.Rows[j];
+                f4.disp_people(dr1);
+
+            }
+            //f4.disp_people(dr1);
             connection.Close();
 
         }
@@ -414,7 +470,7 @@ namespace DBS_proj_test
 
         private void button6_Click(object sender, EventArgs e)
         {
-            DBConnect();
+            /*DBConnect();
             connection.Open();
             MySqlCommand com = new MySqlCommand();
             com.CommandText = "Select * from movies where movie_title= 'Friends'";
@@ -429,6 +485,48 @@ namespace DBS_proj_test
             Form4 f4 = new Form4();
             f4.Show();
             f4.disp_det(dr);
+            connection.Close();
+            */
+
+            DBConnect();
+            connection.Open();
+            MySqlCommand com = new MySqlCommand();
+            com.CommandText = "Select * from movies where movie_title= 'Friends'";
+            com.CommandType = CommandType.Text;
+            MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            DataRow dr;
+            da.Fill(ds, "tbl_movie");
+            dt = ds.Tables["tbl_movie"];
+            dr = dt.Rows[0];
+            String mov_nam = dr["movie_title"].ToString();
+            //MessageBox.Show(mov_nam);
+            MySqlCommand com1 = new MySqlCommand();
+            com1.CommandText = "select first_name, last_name, description from profession natural join people natural join movie_people where movie_people.movie_id=(select movie_id from movies where movie_title ='" + mov_nam + "')";
+            com1.CommandType = CommandType.Text;
+            MySqlDataAdapter da1 = new MySqlDataAdapter(com1.CommandText, connection);
+            DataSet ds1 = new DataSet();
+            DataTable dt1 = new DataTable();
+            DataRow dr1;
+            int i = 0;
+            da1.Fill(ds1, "tbl_peeps");
+            dt1 = ds1.Tables["tbl_peeps"];
+            //dr1 = dt1.Rows[i];
+            i = dt1.Rows.Count;
+            //MessageBox.Show(i.ToString());
+
+
+            Form4 f4 = new Form4();
+            f4.Show();
+            f4.disp_det(dr);
+            for (int j = 0; j < i; j++)
+            {
+                dr1 = dt1.Rows[j];
+                f4.disp_people(dr1);
+
+            }
+            //f4.disp_people(dr1);
             connection.Close();
         }
 
@@ -663,8 +761,25 @@ namespace DBS_proj_test
 
         private void search_b_Click(object sender, EventArgs e)
         {
-            Form5 f = new Form5();
-            f.Show();
+            String search_text = searchbar.Text;
+            //Form5 f1 = new Form5(search_text);
+           /* DBConnect();
+            connection.Open();
+            MySqlCommand com = new MySqlCommand();
+            com.CommandText = "Select movie_title, star_rating, language from movies"; ;
+            com.CommandType = CommandType.Text;
+            MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
+            DataTable dt = new DataTable();
+            DataSet ds = new DataSet();
+            DataRow dr;
+            da.Fill(ds, "Tbl_mov");
+            */
+            Form5 f2 = new Form5();
+            
+            f2.Show();
+            f2.dip_res();
+            f2.get_srcval(search_text);
+            //connection.Close();
         }
 
         private void button7_Click(object sender, EventArgs e)

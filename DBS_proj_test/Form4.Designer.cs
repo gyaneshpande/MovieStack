@@ -29,7 +29,6 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form4));
-            this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.back_b = new System.Windows.Forms.Button();
@@ -39,6 +38,9 @@
             this.date = new System.Windows.Forms.Label();
             this.lang = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label7 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -49,20 +51,16 @@
             this.actr3 = new System.Windows.Forms.LinkLabel();
             this.dir = new System.Windows.Forms.LinkLabel();
             this.wri = new System.Windows.Forms.LinkLabel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.label7 = new System.Windows.Forms.Label();
+            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.linkLabel2 = new System.Windows.Forms.LinkLabel();
+            this.label8 = new System.Windows.Forms.Label();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.panel2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             this.SuspendLayout();
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.panel1.Location = new System.Drawing.Point(21, 176);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(212, 206);
-            this.panel1.TabIndex = 0;
             // 
             // label1
             // 
@@ -122,7 +120,7 @@
             this.runn_time.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(25)))), ((int)(((byte)(25)))), ((int)(((byte)(25)))));
             this.runn_time.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.runn_time.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.runn_time.Location = new System.Drawing.Point(296, 78);
+            this.runn_time.Location = new System.Drawing.Point(284, 79);
             this.runn_time.Name = "runn_time";
             this.runn_time.Size = new System.Drawing.Size(72, 16);
             this.runn_time.TabIndex = 5;
@@ -179,6 +177,36 @@
             this.panel2.Size = new System.Drawing.Size(920, 136);
             this.panel2.TabIndex = 9;
             // 
+            // label7
+            // 
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label7.Location = new System.Drawing.Point(497, 67);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(13, 23);
+            this.label7.TabIndex = 20;
+            this.label7.Text = "|";
+            // 
+            // label6
+            // 
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label6.Location = new System.Drawing.Point(409, 69);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(13, 23);
+            this.label6.TabIndex = 20;
+            this.label6.Text = "|";
+            // 
+            // label5
+            // 
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
+            this.label5.Location = new System.Drawing.Point(344, 67);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(13, 23);
+            this.label5.TabIndex = 20;
+            this.label5.Text = "|";
+            // 
             // label2
             // 
             this.label2.AutoSize = true;
@@ -198,6 +226,7 @@
             this.label3.Size = new System.Drawing.Size(57, 16);
             this.label3.TabIndex = 11;
             this.label3.Text = "Director";
+            this.label3.Click += new System.EventHandler(this.dir_Click);
             // 
             // label4
             // 
@@ -225,7 +254,7 @@
             this.wishlist.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.wishlist.Font = new System.Drawing.Font("Century", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.wishlist.ForeColor = System.Drawing.Color.White;
-            this.wishlist.Location = new System.Drawing.Point(280, 457);
+            this.wishlist.Location = new System.Drawing.Point(62, 433);
             this.wishlist.Name = "wishlist";
             this.wishlist.Size = new System.Drawing.Size(122, 34);
             this.wishlist.TabIndex = 14;
@@ -239,8 +268,7 @@
             this.actr1.Name = "actr1";
             this.actr1.Size = new System.Drawing.Size(103, 32);
             this.actr1.TabIndex = 15;
-            this.actr1.TabStop = true;
-            this.actr1.Text = "linkLabel1";
+            this.actr1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.actr1_LinkClicked);
             // 
             // actr2
             // 
@@ -248,8 +276,7 @@
             this.actr2.Name = "actr2";
             this.actr2.Size = new System.Drawing.Size(103, 32);
             this.actr2.TabIndex = 16;
-            this.actr2.TabStop = true;
-            this.actr2.Text = "linkLabel2";
+            this.actr2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.actr2_LinkClicked);
             // 
             // actr3
             // 
@@ -257,64 +284,89 @@
             this.actr3.Name = "actr3";
             this.actr3.Size = new System.Drawing.Size(110, 32);
             this.actr3.TabIndex = 17;
-            this.actr3.TabStop = true;
-            this.actr3.Text = "linkLabel3";
+            this.actr3.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.actr3_LinkClicked);
             // 
             // dir
             // 
             this.dir.AutoSize = true;
             this.dir.Location = new System.Drawing.Point(363, 318);
             this.dir.Name = "dir";
-            this.dir.Size = new System.Drawing.Size(55, 13);
+            this.dir.Size = new System.Drawing.Size(0, 13);
             this.dir.TabIndex = 18;
-            this.dir.TabStop = true;
-            this.dir.Text = "linkLabel4";
+            this.dir.Click += new System.EventHandler(this.dir_Click);
             // 
             // wri
             // 
             this.wri.AutoSize = true;
             this.wri.Location = new System.Drawing.Point(363, 368);
             this.wri.Name = "wri";
-            this.wri.Size = new System.Drawing.Size(55, 13);
+            this.wri.Size = new System.Drawing.Size(0, 13);
             this.wri.TabIndex = 19;
-            this.wri.TabStop = true;
-            this.wri.Text = "linkLabel5";
+            this.wri.Click += new System.EventHandler(this.wri_Click);
             // 
-            // label5
+            // dataGridView1
             // 
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label5.Location = new System.Drawing.Point(344, 67);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(13, 23);
-            this.label5.TabIndex = 20;
-            this.label5.Text = "|";
+            this.dataGridView1.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.dataGridView1.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dataGridView1.Location = new System.Drawing.Point(727, 218);
+            this.dataGridView1.Name = "dataGridView1";
+            this.dataGridView1.Size = new System.Drawing.Size(340, 321);
+            this.dataGridView1.TabIndex = 20;
+            this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
-            // label6
+            // linkLabel1
             // 
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label6.Location = new System.Drawing.Point(409, 69);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(13, 23);
-            this.label6.TabIndex = 20;
-            this.label6.Text = "|";
+            this.linkLabel1.AutoSize = true;
+            this.linkLabel1.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel1.Location = new System.Drawing.Point(277, 439);
+            this.linkLabel1.Name = "linkLabel1";
+            this.linkLabel1.Size = new System.Drawing.Size(109, 20);
+            this.linkLabel1.TabIndex = 21;
+            this.linkLabel1.TabStop = true;
+            this.linkLabel1.Text = "View Reviews";
             // 
-            // label7
+            // linkLabel2
             // 
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.label7.Location = new System.Drawing.Point(497, 67);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(13, 23);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "|";
+            this.linkLabel2.AutoSize = true;
+            this.linkLabel2.Font = new System.Drawing.Font("Century", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.linkLabel2.Location = new System.Drawing.Point(457, 439);
+            this.linkLabel2.Name = "linkLabel2";
+            this.linkLabel2.Size = new System.Drawing.Size(91, 20);
+            this.linkLabel2.TabIndex = 22;
+            this.linkLabel2.TabStop = true;
+            this.linkLabel2.Text = "Add review";
+            this.linkLabel2.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel2_LinkClicked);
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.ForeColor = System.Drawing.SystemColors.Control;
+            this.label8.Location = new System.Drawing.Point(59, 518);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(35, 13);
+            this.label8.TabIndex = 23;
+            this.label8.Text = "label8";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.pictureBox2.Location = new System.Drawing.Point(21, 170);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(187, 233);
+            this.pictureBox2.TabIndex = 24;
+            this.pictureBox2.TabStop = false;
             // 
             // Form4
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1000, 540);
+            this.ClientSize = new System.Drawing.Size(1079, 540);
+            this.Controls.Add(this.pictureBox2);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.linkLabel2);
+            this.Controls.Add(this.linkLabel1);
+            this.Controls.Add(this.dataGridView1);
             this.Controls.Add(this.wri);
             this.Controls.Add(this.dir);
             this.Controls.Add(this.actr3);
@@ -329,7 +381,6 @@
             this.Controls.Add(this.genre);
             this.Controls.Add(this.runn_time);
             this.Controls.Add(this.back_b);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Location = new System.Drawing.Point(190, 155);
@@ -340,14 +391,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-
-        private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button back_b;
@@ -370,5 +421,10 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.LinkLabel linkLabel2;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.PictureBox pictureBox2;
     }
 }

@@ -7,6 +7,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using MySql.Data.MySqlClient;
+using MySql.Data.Types;
 
 namespace DBS_proj_test
 {
@@ -62,11 +64,15 @@ namespace DBS_proj_test
         private void login_button_Click(object sender, EventArgs e)
         {
             //login_button.Text = "test";
+            String usr_id = textBox1.Text;
+            
             
             
             if(textBox1.Text.Equals("admin") && textBox2.Text.Equals("password"))
             {
                 MessageBox.Show("Login Successful");
+                Form2 f2 = new Form2(usr_id);
+
                 this.Hide();
             }
         }
