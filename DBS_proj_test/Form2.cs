@@ -50,11 +50,13 @@ namespace DBS_proj_test
             button10.Location = new Point(button10.Location.X + button10.Width + 30, button10.Location.Y);
             panel3.Hide();
 
+
         }
         //login_form lf1 = new login_form();
         public Form2(String usr_id)
         {
             this.user_id = usr_id;
+            MessageBox.Show(user_id);
             
         }
         
@@ -105,10 +107,20 @@ namespace DBS_proj_test
             tab_p.Size = watchlist_b.Size;
             tab_p.Left = watchlist_b.Left;
             tab_p.Height = 15;
-            if(signin_b.Text.Equals("Sign in"))
-            {
-                lf1.Show();
-            }
+            
+            DBConnect();
+            connection.Open();
+            MySqlCommand com = new MySqlCommand();
+            com.CommandText = "select movie_title, movie_id, language ,user_id from watchlist natural join movies where user_id='" + Class1.u1 + "'";
+            com.CommandType = CommandType.Text;
+            MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
+            DataTable dt = new DataTable();
+            DataSet ds = new DataSet();
+            da.Fill(ds, "tbl_watchlist");
+            //dt = ds.Tables["tbl_watchlist"];
+            Form6 f6 = new Form6();
+            f6.watchlist_det(ds);
+            f6.Show();
         }
 
         private void searchbar_TextChanged(object sender, EventArgs e)
@@ -147,8 +159,10 @@ namespace DBS_proj_test
             //this.Text = "" + user_id;
 
             //MessageBox.Show(user_id.ToString());
-            lf1.clr_txtbox();
-            lf1.Show();
+            login_form f1 = new login_form();
+            f1.clr_txtbox();
+            f1.Show();
+
             //lf1.
         }
 
@@ -325,7 +339,7 @@ namespace DBS_proj_test
 
         private void button4_Click(object sender, EventArgs e)
         {
-            DBConnect();
+            /*DBConnect();
             connection.Open();
             MySqlCommand com = new MySqlCommand();
             com.CommandText = "Select * from movies where movie_title= 'The Godfather'";
@@ -341,11 +355,53 @@ namespace DBS_proj_test
             f4.Show();
             f4.disp_det(dr);
             connection.Close();
+            */
+            DBConnect();
+            connection.Open();
+            MySqlCommand com = new MySqlCommand();
+            com.CommandText = "Select * from movies where movie_title='The Godfather'";
+            com.CommandType = CommandType.Text;
+            MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            DataRow dr;
+            da.Fill(ds, "tbl_movie");
+            dt = ds.Tables["tbl_movie"];
+            dr = dt.Rows[0];
+            String mov_nam = dr["movie_title"].ToString();
+            //MessageBox.Show(mov_nam);
+            MySqlCommand com1 = new MySqlCommand();
+            com1.CommandText = "select first_name, last_name, description from profession natural join people natural join movie_people where movie_people.movie_id=(select movie_id from movies where movie_id ='180')";
+            com1.CommandType = CommandType.Text;
+            MySqlDataAdapter da1 = new MySqlDataAdapter(com1.CommandText, connection);
+            DataSet ds1 = new DataSet();
+            DataTable dt1 = new DataTable();
+            DataRow dr1;
+            int i = 0;
+            da1.Fill(ds1, "tbl_peeps");
+            dt1 = ds1.Tables["tbl_peeps"];
+            //dr1 = dt1.Rows[i];
+            i = dt1.Rows.Count;
+            //MessageBox.Show(i.ToString());
+
+
+            Form4 f4 = new Form4();
+            f4.Show();
+            f4.disp_det(dr);
+            for (int j = 0; j < i; j++)
+            {
+                dr1 = dt1.Rows[j];
+                f4.disp_people(dr1);
+
+            }
+            //f4.disp_people(dr1);
+            connection.Close();
+                
         }
 
         private void button5_Click(object sender, EventArgs e)
         {
-            
+            /*
             DBConnect();
             connection.Open();
             MySqlCommand com = new MySqlCommand();
@@ -362,7 +418,50 @@ namespace DBS_proj_test
             f4.Show();
             f4.disp_det(dr);
             connection.Close();
-            
+            */
+            DBConnect();
+            connection.Open();
+            MySqlCommand com = new MySqlCommand();
+            com.CommandText = "Select * from movies where movie_id='180'";
+            com.CommandType = CommandType.Text;
+            MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
+            DataSet ds = new DataSet();
+            DataTable dt = new DataTable();
+            DataRow dr;
+            da.Fill(ds, "tbl_movie");
+            dt = ds.Tables["tbl_movie"];
+            dr = dt.Rows[0];
+            String mov_nam = dr["movie_title"].ToString();
+            //MessageBox.Show(mov_nam);
+            MySqlCommand com1 = new MySqlCommand();
+            com1.CommandText = "select first_name, last_name, description from profession natural join people natural join movie_people where movie_people.movie_id=(select movie_id from movies where movie_id ='180')";
+            com1.CommandType = CommandType.Text;
+            MySqlDataAdapter da1 = new MySqlDataAdapter(com1.CommandText, connection);
+            DataSet ds1 = new DataSet();
+            DataTable dt1 = new DataTable();
+            DataRow dr1;
+            int i = 0;
+            da1.Fill(ds1, "tbl_peeps");
+            dt1 = ds1.Tables["tbl_peeps"];
+            //dr1 = dt1.Rows[i];
+            i = dt1.Rows.Count;
+            //MessageBox.Show(i.ToString());
+
+
+            Form4 f4 = new Form4();
+            f4.Show();
+            f4.disp_det(dr);
+            for (int j = 0; j < i; j++)
+            {
+                dr1 = dt1.Rows[j];
+                f4.disp_people(dr1);
+                //f4.disp_genre("181");
+
+            }
+            //f4.disp_people(dr1);
+            connection.Close();
+        
+
         }
 
         private void button1_MouseHover(object sender, EventArgs e)

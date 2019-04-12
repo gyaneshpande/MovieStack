@@ -15,12 +15,27 @@ namespace DBS_proj_test
 {
     public partial class Form4 : Form
     {
+        String user_id= Class1.u1;
         public Form4()
         {
             InitializeComponent();
         }
+        public Form4(string userr_id)
+        {
+            this.user_id = userr_id;
+            MessageBox.Show(user_id);
+        }
         int c = 0;
         MySqlConnection connection;
+
+        
+
+        public void get_user_id(String usr_id)
+        {
+            this.user_id = usr_id;
+            
+            //MessageBox.Show(user_id);
+        }
 
         public void disp_det(DataRow dr)
         {
@@ -41,11 +56,32 @@ namespace DBS_proj_test
             star_rating.Text = dr["star_rating"]+"/10 ".ToString();
             desc.Text = dr["description"].ToString();
             label8.Text = dr["movie_id"].ToString();
+            disp_genre(label8.Text.ToString());
             pictureBox2.ImageLocation = dr["image"].ToString();
             pictureBox2.SizeMode = PictureBoxSizeMode.StretchImage;
         }
         public void signin_change()
         {
+
+        }
+        public void disp_genre(String movie_id)
+        {
+            DBConnect();
+            DBConnect();
+            connection.Open();
+            MySqlCommand com = new MySqlCommand();
+            //MessageBox.Show(movie_id);
+            com.CommandText = "select genre_desc from movie_genre natural join genre where movie_id ='" + movie_id + "';";
+            com.CommandType = CommandType.Text;
+            MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "tbl_gen");
+            DataTable dt = new DataTable();
+            dt = ds.Tables["tbl_gen"];
+            //da.Fill(ds, "tbl_gen");
+            DataRow dr;
+            dr = dt.Rows[0];
+            genre.Text = dr["genre_desc"].ToString();
 
         }
 
@@ -57,6 +93,7 @@ namespace DBS_proj_test
             //int count = dt.Rows.Count;
             //MessageBox.Show(c.ToString());
             //int c = 0;
+
             if(dr["description"].Equals("Actor"))
             {
                 if(c==0)
@@ -71,6 +108,7 @@ namespace DBS_proj_test
             if (dr["description"].Equals("Writer"))
                 wri.Text = dr["first_name"].ToString() + " " + dr["last_name"].ToString();
             c++;
+            //disp_genre(label8.Text);
         }
         public void disp_people(string mov)
         {
@@ -161,6 +199,32 @@ namespace DBS_proj_test
         {
             //Form2 f = new Form2();
             String mov_id = label8.Text;
+            //MessageBox.Show(user_id);
+            try
+            {
+                DBConnect();
+                connection.Open();
+                MySqlCommand com = new MySqlCommand();
+                com.CommandText = "insert into watchlist values ('" + user_id + "','" +mov_id+ "')";
+                com.CommandType = CommandType.Text;
+                com.Connection = connection;
+                com.ExecuteNonQuery();
+                MessageBox.Show("Added to Watchlist");
+                connection.Close();
+
+            }
+            catch(Exception ex)
+            {
+                if (user_id == null)
+                {
+                    MessageBox.Show("Login first to add to watchlist");
+                }
+                else
+                {
+                    MessageBox.Show("Cannot be Added to watchlist");
+                }
+            }
+
             
         }
 
@@ -171,15 +235,19 @@ namespace DBS_proj_test
             MySqlCommand com = new MySqlCommand();
             String name = actr1.Text;
             String[] fname = name.Split(' ');
+            
             //MessageBox.Show(fname[0].ToString());
 
-            com.CommandText = "select movie_title,star_rating,language from movies natural join movie_people natural join people where first_name='"+fname[0]+"' group by person_id;";
+            com.CommandText = "WITH t1 AS( select movie_id from movie_people where person_id=(select person_id from people where first_name = '"+fname[0]+"' and last_name = '"+fname[1]+"') ) SELECT movie_title,star_rating,language FROM movies,t1 where movies.movie_id=t1.movie_id;";
             com.CommandType = CommandType.Text;
             MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
             DataSet ds = new DataSet();
-            da.Fill(ds, "tbl_actdet");
+            da.Fill(ds, "Tbl_actdet1");
+            DataTable dt = new DataTable();
+            dt = ds.Tables["Tbl_actdet1"];
+            DataView dv = new DataView();
             dataGridView1.DataSource = ds;
-            dataGridView1.DataMember = "tbl_actdet";
+            dataGridView1.DataMember = "Tbl_actdet1";
             connection.Close();
 
         }
@@ -193,7 +261,7 @@ namespace DBS_proj_test
             String[] fname = name.Split(' ');
             //MessageBox.Show(fname[0].ToString());
 
-            com.CommandText = "select movie_title,star_rating,language from movie_people natural join movies natural join people where first_name='" + fname[0] + "' group by person_id;";
+            com.CommandText = "WITH t1 AS( select movie_id from movie_people where person_id=(select person_id from people where first_name = '" + fname[0] + "' and last_name = '" + fname[1] + "') ) SELECT movie_title,star_rating,language FROM movies,t1 where movies.movie_id=t1.movie_id;";
             com.CommandType = CommandType.Text;
             MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
             DataSet ds = new DataSet();
@@ -212,7 +280,7 @@ namespace DBS_proj_test
             String[] fname = name.Split(' ');
             //MessageBox.Show(fname[0].ToString());
 
-            com.CommandText = "select movie_title,star_rating,language from movie_people natural join movies natural join people where first_name='" + fname[0] + "' group by person_id;";
+            com.CommandText = "WITH t1 AS( select movie_id from movie_people where person_id=(select person_id from people where first_name = '" + fname[0] + "' and last_name = '" + fname[1] + "') ) SELECT movie_title,star_rating,language FROM movies,t1 where movies.movie_id=t1.movie_id;";
             com.CommandType = CommandType.Text;
             MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
             DataSet ds = new DataSet();
@@ -231,7 +299,7 @@ namespace DBS_proj_test
             String[] fname = name.Split(' ');
             //MessageBox.Show(fname[0].ToString());
 
-            com.CommandText = "select movie_title,star_rating,language from movie_people natural join movies natural join people where first_name='" + fname[0] + "' group by person_id;";
+            com.CommandText = "WITH t1 AS( select movie_id from movie_people where person_id=(select person_id from people where first_name = '" + fname[0] + "' and last_name = '" + fname[1] + "') ) SELECT movie_title,star_rating,language FROM movies,t1 where movies.movie_id=t1.movie_id;";
             com.CommandType = CommandType.Text;
             MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
             DataSet ds = new DataSet();
@@ -267,13 +335,66 @@ namespace DBS_proj_test
 
         private void linkLabel2_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
         {
-            string str = Interaction.InputBox("Review", "Add your opinions", "Write here");
-            MessageBox.Show(str);
+            String str = Interaction.InputBox("Review", "Add your opinions", "Write here");
+            //MessageBox.Show(str);
+            try
+            {
+                DBConnect();
+                connection.Open();
+                MySqlCommand com = new MySqlCommand();
+                com.CommandText = "insert into reviews values ('" + label8.Text + "','" + Class1.u1 + "','" + str + "');";
+                com.CommandType = CommandType.Text;
+                com.Connection = connection;
+                com.ExecuteNonQuery();
+                MessageBox.Show("Review Submitted Successfully");
+                connection.Close();
+            }
+            catch(Exception ae)
+            {
+                if (Class1.u1 == null)
+                {
+                    MessageBox.Show("Please Login First");
+                }
+                else
+                {
+                    MessageBox.Show("Review not submitted");
+                }
+            }
+
 
             
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void desc_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e)
+        {
+            DBConnect();
+            connection.Open();
+            MySqlCommand com = new MySqlCommand();
+            com.CommandText = "select * from reviews where movie_id='" + label8.Text + "';";
+            com.CommandType = CommandType.Text;
+            MySqlDataAdapter da = new MySqlDataAdapter(com.CommandText, connection);
+            DataSet ds = new DataSet();
+            da.Fill(ds, "tbl_review");
+                
+            Form7 f7 = new Form7();
+            f7.disp_rev(da);
+            f7.Show();
+            
+
+            
+        }
+
+        private void genre_Click(object sender, EventArgs e)
         {
 
         }

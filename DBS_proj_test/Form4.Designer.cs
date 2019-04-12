@@ -137,6 +137,7 @@
             this.genre.Size = new System.Drawing.Size(44, 16);
             this.genre.TabIndex = 6;
             this.genre.Text = "Genre";
+            this.genre.Click += new System.EventHandler(this.genre_Click);
             // 
             // date
             // 
@@ -246,6 +247,7 @@
             this.desc.Size = new System.Drawing.Size(655, 45);
             this.desc.TabIndex = 13;
             this.desc.Text = ".";
+            this.desc.Click += new System.EventHandler(this.desc_Click);
             // 
             // wishlist
             // 
@@ -325,6 +327,7 @@
             this.linkLabel1.TabIndex = 21;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "View Reviews";
+            this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
             // 
             // linkLabel2
             // 
